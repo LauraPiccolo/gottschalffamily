@@ -1,5 +1,6 @@
 .header {
  padding: 20px;
+ font-size: 20px;
 }
 
 .header__nav li {
@@ -8,6 +9,10 @@
   border: solid 1px black;
   border-radius: 20px;
   text-transform: uppercase;
+}
+
+.header__nav li:hover {
+  background-color: white;
 }
 
 .header__nav__li--active {

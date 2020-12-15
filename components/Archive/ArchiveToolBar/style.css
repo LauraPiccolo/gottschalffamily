@@ -1,0 +1,26 @@
+.archive__toolbar {
+  width: calc(100% - 40px);
+  border: solid 1px black;
+  margin-left: 20px;
+  padding: 0;
+  height: 30px;
+  font-size: 15px;
+  position: absolute;
+  top: 70px;
+}
+
+.archive__toolbar__button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 100%;
+  width: 50%;
+}
+
+.archive__toolbar__button:first-child {
+  border-right: 1px black solid;
+}
+
+.archive__toolbar__button--selected {
+  background-color: white;
+}

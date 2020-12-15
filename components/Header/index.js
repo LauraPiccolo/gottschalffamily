@@ -1,10 +1,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const Header = ({  }) => {
+const Header = ({ headerSections }) => {
 
   const router = useRouter();
-  const navNames = ['Storyfeld','Now','Archive','Book']
   const navLinks = ["/home/storyfeld","/now","/archive","/book"]
   const navLinksMicro = ["/home","/now","/archive","/book"]
 
@@ -14,7 +13,7 @@ const Header = ({  }) => {
       <nav className="header__nav">
         <ul>
           {
-            navNames.map((name, index) => (
+            headerSections.map((name, index) => (
               <li className={`header__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' header__nav__li--active':''}`}>
                 <Link href={navLinks[index]}>{name}</Link>
               </li>

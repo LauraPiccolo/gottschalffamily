@@ -11,14 +11,14 @@
 }
 
 .main h2 {
-  font-size: calc(4vw + 4vh);
+  font-size: 60px;
   font-family: 'Zarid';
   padding: 0;
   line-height: 90%;
 }
 
 .main p, .main__register, .main__cities__title, .city__register {
-  font-size: calc(1.3vw + 1.3vh);
+  font-size: 25px;
   line-height: 125%;
 }
 

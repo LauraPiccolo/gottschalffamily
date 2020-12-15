@@ -1,9 +1,9 @@
+
 const Languages = ({ setLang, currentLang }) => {
 
   const languages = ['de','en','ar'];
 
   const changeLanguage = (event, lang) => {
-    document.querySelector('.player__cursor').style.animation = 'unset';
     event.preventDefault(); 
     setLang(lang);
   }

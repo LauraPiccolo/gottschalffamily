@@ -8,7 +8,7 @@
 .now__theme h2, .now__theme h3 {
   font-family: 'Zarid';
   display: inline-block;
-  font-size: 2em;
+  font-size: 30px;
   margin-top: -10px;
 }
 
@@ -19,5 +19,6 @@
 
 .now__theme__description {
   margin-top: -5px;
+  font-size: 15px;
   line-height: 135%;
 }

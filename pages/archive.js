@@ -48,12 +48,172 @@ const Archive = () => {
           }
         ]
       },
+      {
+        city: 'Hamburg',
+        events: [
+          {
+            theme: 'Happiness',
+            date: '10.12.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Event2',
+            date: '10.08.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Happiness',
+            date: '07.01.2022',
+            link: '/archive/berlin/happiness'
+          }
+        ]
+      },
+      {
+        city: 'Hamburg',
+        events: [
+          {
+            theme: 'Happiness',
+            date: '10.12.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Event2',
+            date: '10.08.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Happiness',
+            date: '07.01.2022',
+            link: '/archive/berlin/happiness'
+          }
+        ]
+      },
+      {
+        city: 'Hamburg',
+        events: [
+          {
+            theme: 'Happiness',
+            date: '10.12.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Event2',
+            date: '10.08.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Happiness',
+            date: '07.01.2022',
+            link: '/archive/berlin/happiness'
+          }
+        ]
+      },
+      {
+        city: 'Hamburg',
+        events: [
+          {
+            theme: 'Happiness',
+            date: '10.12.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Event2',
+            date: '10.08.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Happiness',
+            date: '07.01.2022',
+            link: '/archive/berlin/happiness'
+          }
+        ]
+      },
+      {
+        city: 'Hamburg',
+        events: [
+          {
+            theme: 'Happiness',
+            date: '10.12.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Event2',
+            date: '10.08.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Happiness',
+            date: '07.01.2022',
+            link: '/archive/berlin/happiness'
+          }
+        ]
+      },
+      {
+        city: 'Hamburg',
+        events: [
+          {
+            theme: 'Happiness',
+            date: '10.12.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Event2',
+            date: '10.08.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Happiness',
+            date: '07.01.2022',
+            link: '/archive/berlin/happiness'
+          }
+        ]
+      },
+      {
+        city: 'Hamburg',
+        events: [
+          {
+            theme: 'Happiness',
+            date: '10.12.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Event2',
+            date: '10.08.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Happiness',
+            date: '07.01.2022',
+            link: '/archive/berlin/happiness'
+          }
+        ]
+      },
+      {
+        city: 'Hamburg',
+        events: [
+          {
+            theme: 'Happiness',
+            date: '10.12.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Event2',
+            date: '10.08.2020',
+            link: '/archive/berlin/happiness'
+          },
+          {
+            theme: 'Happiness',
+            date: '07.01.2022',
+            link: '/archive/berlin/happiness'
+          }
+        ]
+      },
       
     ],
 
     theme: [
       {
-        theme: 'Happiness',
+        title: 'Happiness',
         events: [
           {
             city: 'Berlin',
@@ -73,7 +233,7 @@ const Archive = () => {
         ]
       },
       {
-        theme: 'Sadness',
+        title: 'Sadness',
         events: [
           {
             city: 'Berlin',

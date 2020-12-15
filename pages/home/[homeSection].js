@@ -7,12 +7,12 @@ import FullScreenVideo from '../../components/Home/FullScreenVideo'
 import Player from '../../components/Home/Player'
 // FETCH
 import content from '../../data'
-import HomeToolbar from '../../components/HomeToolbar'
+import HomeToolbar from '../../components/Home/HomeToolbar'
 
-export default function homeSection() {
+export default function homeSection({lang}) {
   const router = useRouter()
-  const pages = ['storyfeld','warum','wie','wer','wo','premiere']
-  const lang = 'de'
+  const pages = ['storyfeld','warum','wie','wer','wo']
+  console.log(lang);
 
   const [next, setNext] = useState(1);
   const [location, setLocation] = useState(router.query.homeSection);
@@ -36,7 +36,7 @@ export default function homeSection() {
 
   return (
     <div className="home">
-      <HomeToolbar navList={content[lang].navList}/>
+      <HomeToolbar navList={content[lang].navList} current={router.query.homeSection}/>
       <PlayButton />
       <FullScreenVideo lang={lang} />
       <Player audioFile={content[lang].audioFile}/>

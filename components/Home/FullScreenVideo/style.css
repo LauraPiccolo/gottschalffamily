@@ -11,6 +11,7 @@
   transition: opacity .7s;
   cursor: none;
   background-color: white;
+  pointer-events: none;
 }
 
 .video__video {

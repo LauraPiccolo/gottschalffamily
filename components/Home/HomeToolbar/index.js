@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-const HomeToolbar= ({ navList }) => {
+const HomeToolbar= ({ navList, current }) => {
 
-  const pages = ['storyfeld','warum','wie','wer','wo','premiere'];
+  const pages = ['storyfeld','warum','wie','wer','wo'];
 
   return (
     <div className="home__toolbar">
@@ -10,13 +10,11 @@ const HomeToolbar= ({ navList }) => {
         <ul>
           {
             navList.map((section, index) => (
-              <li>
+              <li className={`home__toolbar__nav__link${section.toLowerCase() === current ? ' home__toolbar__nav__link--active':''}`}>
                 <Link 
-                className="home__toolbar__nav__link"
                 activeClassName="home__toolbar__nav__link--active"
                 href={`/home/${pages[index]}`}>
-                  {
-                  section === 'Storyfeld' ? (<h1>{section}</h1>) : (section)}
+                  {section}
                 </Link>
               </li>
             ))

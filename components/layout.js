@@ -45,7 +45,7 @@ const Layout = ({ children, settings }) => {
             onMouseLeave={hideCross}
             />
 
-            <Header />
+            <Header headerSections={content[lang].header}/>
             <Languages setLang={setLang} currentLang={lang}/>
             <Sticker content={content[lang].sticker} />
             {children}

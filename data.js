@@ -1,6 +1,7 @@
 const content = {
   'de': {
-    'navList': ['Storyfeld','Warum','Wie','Wer','Wo','Event Termine'],
+    'header': ['Storyfeld','Jetzt','Archiv','Buch'],
+    'navList': ['Storyfeld','Warum','Wie','Wer','Wo'],
     'titles': ['Storyfeld','Warum?','Wie sieht das in der Praxis aus?','Wer sind wir?','Wo?','Storyfelder - Weltpremiere '],
     'content': {
       'storyfeld': 'Ein Raum für autobiografische Geschichten, eine Erzähl-Plattform für lokale, transregionale sowie Online-Events, wo jede Story aus dem Leben zählt - und zwar deine, meine und unsere - und wo wir Erkenntnisse austauschen.',
@@ -10,11 +11,12 @@ const content = {
       'wo':'<h3>Städte:</h3>Berlin, Magdeburg, Düsseldorf, Dresden, Göttingen, Hamburg, Köln, Ruhrgebiet. <br/><h3>Regionen:</h3>Brandenburg, Niedersachsen, Nordrhein-Westfalen, Hessen, Sachsen-Anhalt, Sachsen, Schleswig-Holstein, Mecklenburg-Vorpommern.',
       'premiere':'Eintritt frei<br/>Registriere dich hier per E-Mail mit Vor- und Nachname: <a href="mailto:events@storyfelder.de">events@storyfelder.de</a>  - und wir schicken dir den Link zu. Die ersten STORYFELD events werden zum Thema Glück sein.'
     },
-    'sticker': 'Get our book for free!',
+    'sticker': 'Get our book<br/>for free!',
     'audioFile':'audio_de.mp3',
   },
   'en': {
-    'navList': ['Storyfield','Why','How','Who','Where','Event dates'],
+    'header': ['Storyfeld','Now','Archive','Book'],
+    'navList': ['Storyfield','Why','How','Who','Where'],
     'titles': ['Storyfield','Why?','And in practice?','Who are we?','Where?','Storyfield – World premiere'],
     'content': {
       'storyfeld': 'A space for autobiographical stories, a storytelling platform, with local, trans-regional and online events, where every real-life story counts – yours, mine and ours - and where people share their insights, ideas and visions.',
@@ -24,10 +26,13 @@ const content = {
       'wo':'<h3>Cities:</h3>Berlin, Magdeburg, Düsseldorf, Dresden, Göttingen, Hamburg, Köln, Ruhrgebiet.<br/><h3>Regions:</h3>Brandenburg, Niedersachsen, Nordrhein-Westfalen, Hessen, Sachsen-Anhalt, Sachsen, Schleswig-Holstein, Mecklenburg-Vorpommern.',
       'premiere':'Free entrance<br/>Register by email with your first and surname, here: <a href="mailto:events@storyfelder.de">events@storyfelder.de</a> - and we\'ll send you the link. The first STORYFELD events will be on the theme of Happiness.'
     },
-    'sticker': 'Get our book for free!',
+    'sticker': 'Get our book<br/>for free!',
     'audioFile':'audio_en.mp3',
   },
   'ar': {
+    'header': ['Storyfeld','الآن',
+    'أرشيف',
+    'كتاب'],
     'navList': ['حقل القصص هو',
     'لماذا',
     'كيف',
@@ -38,8 +43,7 @@ const content = {
     'لماذا؟',
     'في التطبيق؟',
     'من نحن؟',
-    'أين؟',
-    'حقل القصص، الافتتاح العالمي'],
+    'أين؟'],
     'content': {
       'storyfeld': 'مساحة للقصص الشخصية، منصة للسرد، مع عروض محلية و عابرة للأقاليم وأيضا أون لاين. على هذه المنصة كل القصص مهمة، قصتك وقصتي وقصتنا. مكان حيث يتشارك الناس أفكارهم وبصيرتهم ورؤيتهم.',
       'warum':'مجتمعنا يحتاج لأفكار نابعة من تجاربنا، هذه الأفكار تفيد عندما يتم تشاركها. الجميع من كل الخلفيات والأجناس والأعمار والهويات مرحب بهم للدخول في حوارات عن القضايا الحالية للتدريب على وقائع مستقبلية متخيلة في القصص.',
@@ -48,7 +52,7 @@ const content = {
       'wo':'<h3>:المدن</h3><br/>Berlin, Magdeburg, Düsseldorf, Dresden, Göttingen, Hamburg, Köln, Ruhrgebiet. <br/><h3>:المناطق</h3><br/>Brandenburg, Niedersachsen, Nordrhein-Westfalen, Hessen, Sachsen-Anhalt, Sachsen, Schleswig-Holstein, Mecklenburg-Vorpommern.',
       'premiere':'الدخول مجاني<br/>التسجيل عن طريق الإيميل بإرسال اسمك الكامل:<br/>events@storyfelder.de<br/>وبالمقابل سوف نقوم بإرسال الرابط لك.أول حدث لحقل القصص سيكون بعنوان السعادة'
     },
-    'sticker': 'Get our book for free!',
+    'sticker': 'Get our book<br/>for free!',
     'audioFile':'audio_ar.wav',
   },
 };

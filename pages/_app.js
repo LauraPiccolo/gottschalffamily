@@ -1,4 +1,5 @@
 import App from 'next/app';
+import React, { useState } from 'react';
 
 import Layout from '../components/layout'
 import '../components/reset.css'
@@ -33,7 +34,7 @@ class MyApp extends App {
         const { Component, pageProps } = this.props;
         return (
             <Layout>
-                <Component {...pageProps}  />   
+                <Component {...pageProps}  lang="en"/>   
             </Layout>
             )
     }
