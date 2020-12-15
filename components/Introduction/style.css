@@ -1,0 +1,94 @@
+.introduction {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+}
+
+.introduction__image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  background-color: white;
+}
+
+.introduction__image--desktop {
+  display: block;
+}
+
+.introduction__image--mobile {
+  display: none;
+}
+
+.introduction__title {
+  width: 100%;
+  color: white;
+  z-index: 2;
+  padding: 30px;
+  position: absolute;
+  text-align: center;
+  font-family: 'Covid';
+}
+
+.introduction__title--desktop {
+  font-size: 70px;
+  bottom: 30px;
+}
+
+.introduction__title--mobile {
+  font-size: 13vw;
+  line-height: 13vw;
+  bottom: 7.5vw;
+}
+
+.introduction__title--desktop,  .introduction__subtitle--desktop{
+  display: block;
+}
+
+.introduction__title--mobile, .introduction__subtitle--mobile {
+  display: none;
+}
+
+.introduction__subtitle {
+  font-family: 'IBM';
+  position: absolute;
+  color: white;
+  z-index: 30;
+  text-align: center;
+  width: 100%;
+}
+
+.introduction__subtitle--mobile {
+  bottom: 5.5vw;
+  font-size: 5.5vw;
+}
+
+.introduction__subtitle--desktop {
+  bottom: 30px;
+  font-size: 30px;
+}
+
+
+@media (max-width: 800px) {
+  .introduction__image--desktop {
+    display: none;
+  }
+  
+  .introduction__image--mobile {
+    display: block;
+  }
+
+  .introduction__title--desktop, .introduction__subtitle--desktop {
+    display: none;
+  }
+  
+  .introduction__title--mobile, .introduction__subtitle--mobile {
+    display: block;
+  }
+}

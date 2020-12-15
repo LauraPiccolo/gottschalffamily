@@ -1,0 +1,47 @@
+.languages {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  padding: 10px 25px;
+  z-index: 4;
+  font-size: 16px;
+}
+
+.languages ul li {
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.languages ul {
+  display: flex;
+  align-items: space-around;
+  justify-content: space-between;
+}
+
+
+.languages__active {
+  margin: 0;
+}
+
+.languages__active::before {
+  content: "[";
+}
+
+.languages__active::after {
+  content: "]";
+}
+
+@media (max-width: 800px) {
+  .languages {
+    padding: 10px 15px;
+    width: 130px;
+  }
+}
+
+@media (max-width: 330px) {
+  .languages {
+    font-size: 15px;
+  }
+}

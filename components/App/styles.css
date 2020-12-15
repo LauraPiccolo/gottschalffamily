@@ -1,0 +1,81 @@
+.app, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.app {
+  background-image: url('/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.arrow-cursor {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  display: none;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.cross-cursor {
+  width: 70px;
+  height: auto;
+  position: absolute;
+  display: none;
+  z-index: 10;
+  pointer-events: none;
+  z-index: 20;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cities--big {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  object-fit: cover;
+  display: none;
+  cursor: none;
+  background-color: black;
+}
+
+@media (hover: none) {
+  .arrow-cursor {
+    opacity: 0;
+  }
+  .cross-cursor {
+    opacity: 0;
+  }
+}
+
+/* Specific */
+body {
+  font-size: 1rem;
+  font-family: 'IBMPlex';
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+} 
+
+@font-face {
+  font-family: 'IBMPlex';
+  src: url('/fonts/IBMPlexSans-Light.woff2')
+}
+
+@font-face {
+  font-family: 'Zarid';
+  src: url('/fonts/29LTZaridDisplay-Medium.woff')
+}
+
+@font-face {
+  font-family: 'Covid';
+  src: url('/fonts/Alert_Covid.ttf')
+}

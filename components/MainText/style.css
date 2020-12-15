@@ -1,0 +1,217 @@
+.main {
+  width: 100%;
+  height: calc(100% - 60px);
+  margin-top: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 60px 60px 10px 60px;
+  cursor: none;
+  box-sizing: border-box;
+  overflow: scroll;
+}
+
+.main h2 {
+  font-size: calc(4vw + 4vh);
+  font-family: 'Zarid';
+  padding: 0;
+  line-height: 90%;
+}
+
+.main p, .main__register, .main__cities__title, .city__register {
+  font-size: calc(1.3vw + 1.3vh);
+  line-height: 125%;
+}
+
+.main__register, .city__register {
+  background-color: white;
+  border: solid 1px black;
+  padding: 3px 10px 6px 10px;
+  margin-bottom: 5px;
+  outline: none;
+  display: inline-block;
+}
+
+.main__city {
+  display: block;
+  margin-top: 20px;
+}
+
+.main__cities {
+  margin-top: 20px;
+}
+
+.main__content--premiere a {
+  border-bottom: 1px solid black;
+}
+
+.city__register {
+  padding: 1px 10px 2.5px 10px;
+}
+
+.city__info {
+  display: inline-block;
+  margin-left: 10px;
+  width: calc(100% - 150px);
+  vertical-align: top;
+}
+
+.main--ar .main__register {
+  right: 60px;
+}
+
+h3 {
+  display: inline-block;
+  margin-right: 4px;
+}
+
+.main__cities {
+  z-index: 2;
+  display: block;
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+
+.main--ar .main__cities {
+  right: 60px;
+  position: absolute;
+}
+
+.main__cities__img {
+  height: 300px;
+  margin-top: 20px;
+  border: solid 1px white;
+  /* position: absolute; */
+  z-index: 1;
+}
+
+.main__cities__title {
+  margin-top: 22px;
+  position: absolute;
+  z-index: 2;
+  color: white;
+  padding: 5px 10px;
+  font-family: 'Covid';
+  width: 100%;
+  text-align: center;
+  text-align: left;
+}
+
+.main--ar {
+  text-align: right;
+}
+
+.main__social {
+  position: absolute;
+  z-index: 2;
+  cursor: default;
+}
+
+.main__social__link {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.main--ar .main__social {
+  right: 40px;
+  position: absolute;
+}
+
+.main__social__link--facebook {
+  background-image: url('/social-media-02.png');
+}
+
+.main__social__link--twitter {
+  background-image: url('/social-media-01.png');
+}
+
+.main__social__link--insta {
+  background-image: url('/social-media-03.png');
+}
+
+@media (max-width: 800px) {
+
+  .main--ar .main__social {
+    right: 0px;
+  }
+
+  .main {
+    padding: 10px 20px 10px 20px;
+    height: calc(100% - 90px);
+    margin-top: 60px;
+  }
+
+  .main h2 {
+    font-size: 45px;
+  }
+  .main p,  .main__register, .main__cities__title {
+    font-size: calc(1.4vw + 1.4vh);
+  }
+
+  .main__cities__img {
+    height: 250px
+  }
+
+  .main--ar .main__cities {
+    right: 20px;
+  }
+
+  .main--ar h2 {
+    margin-bottom: 10px;
+  }
+
+  .main h2 {
+    margin-bottom: 10px;
+  }
+
+  .main--ar .main__register {
+    right: 20px;
+  }
+
+  .main__register {
+    margin-bottom: 15px;
+  }
+
+  .city__register {
+    display: none;
+  }
+
+  .main__cities .main__city:first-of-type .city__register{
+    display: block;
+    width: 35vw;
+    text-align: center;
+    padding: 3px 10px 6px 10px;
+  }
+
+  .main--ar .city__register {
+    float: right;
+  }
+
+  .city__info {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .main__city {
+    margin-top: 15px;
+  }
+
+  .main__city:first-of-type {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .main__cities__img {
+    height: auto;
+    width: calc(100% - 40px);
+  }
+}
