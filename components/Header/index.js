@@ -1,30 +1,22 @@
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-import React, { useEffect, useState } from 'react';
-// import {NavLink} from 'react-router-dom'
+const Header = ({  }) => {
 
-// == Import
-// import './style.css';
+  const router = useRouter();
+  const navNames = ['Storyfeld','Now','Archive','Book']
+  const navLinks = ["/home/storyfeld","/now","/archive","/book"]
+  const navLinksMicro = ["/home","/now","/archive","/book"]
 
-
-// == Composant
-const Header = ({ navList }) => {
-
-  const pages = ['storyfeld','warum','wie','wer','wo','premiere'];
 
   return (
     <header className="header">
       <nav className="header__nav">
         <ul>
           {
-            navList.map((section, index) => (
-              <li>
-                {/* <NavLink 
-                className="header__nav__link"
-                activeClassName="header__nav__link--active"
-                to={`/${pages[index]}`}> */}
-                  {
-                  section === 'Storyfeld' ? (<h1>{section}</h1>) : (section)}
-                {/* </NavLink> */}
+            navNames.map((name, index) => (
+              <li className={`header__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' header__nav__li--active':''}`}>
+                <Link href={navLinks[index]}>{name}</Link>
               </li>
             ))
           }
@@ -34,5 +26,4 @@ const Header = ({ navList }) => {
   );
 };
 
-// == Export
 export default Header;

@@ -1,17 +1,21 @@
 import App from 'next/app';
 
-import Layout from '../components/layout';
-import '../components/reset.css';
-import '../components/App/styles.css'
-import '../components/Container/style.css'
-import '../components/FullScreenVideo/style.css'
+import Layout from '../components/layout'
+import '../components/reset.css'
+import '../components/styles.css'
+import '../components/Home/FullScreenVideo/style.css'
 import '../components/Header/style.css'
 import '../components/Introduction/style.css'
 import '../components/Languages/style.css'
-import '../components/MainText/style.css'
-import '../components/PlayButton/style.css'
-import '../components/Player/style.css'
+import '../components/Home/MainText/style.css'
+import '../components/Home/PlayButton/style.css'
+import '../components/Home/Player/style.css'
 import '../components/Sticker/style.css'
+import '../components/Home/HomeToolbar/style.css'
+import '../components/Now/EventList/style.css'
+import '../components/Now/Theme/style.css'
+import '../components/Archive/ArchiveList/style.css'
+import '../components/Archive/ArchiveToolBar/style.css'
 
 class MyApp extends App {
     

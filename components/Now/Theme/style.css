@@ -1,0 +1,23 @@
+.now__theme {
+  width: calc(100vw - 40px);
+  margin: 20px;
+  padding: 10px;
+  border: solid 1px black;
+}
+
+.now__theme h2, .now__theme h3 {
+  font-family: 'Zarid';
+  display: inline-block;
+  font-size: 2em;
+  margin-top: -10px;
+}
+
+.now__theme h3 {
+  position: absolute;
+  right: 30px;
+}
+
+.now__theme__description {
+  margin-top: -5px;
+  line-height: 135%;
+}

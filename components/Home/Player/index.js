@@ -1,11 +1,6 @@
 
-import React, { useEffect, useState } from 'react';
+import { useEffect} from 'react';
 
-// == Import
-// import './style.css';
-
-
-// == Composant
 const Player = ({ audioFile }) => {
 
   useEffect(() => {
@@ -22,5 +17,4 @@ const Player = ({ audioFile }) => {
   );
 };
 
-// == Export
 export default Player;

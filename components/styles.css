@@ -1,4 +1,4 @@
-.app, body {
+body, .container, #__next {
   width: 100%;
   height: 100%;
   margin: 0;
@@ -7,7 +7,7 @@
   overflow: hidden;
 }
 
-.app {
+.container {
   background-image: url('/background.png');
   background-size: cover;
   background-position: center;
@@ -78,4 +78,9 @@ body {
 @font-face {
   font-family: 'Covid';
   src: url('/fonts/Alert_Covid.ttf')
+}
+
+.now {
+  position: absolute;
+  top: 50px;
 }

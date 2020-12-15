@@ -1,12 +1,5 @@
-
-import React, { useEffect, useState } from 'react';
 import $ from 'jquery';
 
-// == Import
-// import './style.css';
-
-
-// == Composant
 const FullScreenVideo = ({ lang }) => {
 
   const stopVideo = () => {
@@ -54,5 +47,4 @@ const FullScreenVideo = ({ lang }) => {
   );
 };
 
-// == Export
 export default FullScreenVideo;

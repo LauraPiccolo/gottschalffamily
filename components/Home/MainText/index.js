@@ -116,7 +116,7 @@ const MainText = ({ title, content, next, location, lang }) => {
   },[location])
 
   return (
-    // <Link to={`/${next}`}>
+    <Link href={`/home/${next}`}>
       <section className={`main main--${lang}`} 
         onMouseMove={(event) => arrowCursor(event)}
         onMouseEnter={(event) => showArrow(event)}
@@ -174,7 +174,7 @@ const MainText = ({ title, content, next, location, lang }) => {
           )
         }
       </section>
-    // </Link>
+    </Link>
   );
 };
 

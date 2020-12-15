@@ -1,11 +1,7 @@
-
-import React, { useEffect, useState } from 'react';
 import Link from 'next/link'
 import $ from 'jquery';
 
-// == Composant
 const Introduction = ({ }) => {
-
 
   const showArrow = (event) => {
     document.querySelector('.arrow-cursor').style.display = 'block';
@@ -20,7 +16,7 @@ const Introduction = ({ }) => {
   }
 
   return (
-    <Link to="/storyfeld" onClick={(event) => showArrow(event)}>
+    <Link href="/home/storyfeld" onClick={(event) => showArrow(event)}>
       <section className="introduction">
         <img className="introduction__image introduction__image--mobile" src="intro-mobile.jpg" />
         <img className="introduction__image introduction__image--desktop" src="intro-desktop.jpeg" />
@@ -34,5 +30,4 @@ const Introduction = ({ }) => {
   );
 };
 
-// == Export
 export default Introduction;

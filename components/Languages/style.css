@@ -2,16 +2,17 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 150px;
-  padding: 10px 25px;
+  padding: 20px;
   z-index: 4;
-  font-size: 16px;
 }
 
 .languages ul li {
   display: inline-block;
   cursor: pointer;
-  margin: 0 4px;
+  padding: 1px 10px;
+  border: solid 1px black;
+  border-radius: 20px;
+  text-transform: uppercase;
 }
 
 .languages ul {
@@ -20,17 +21,8 @@
   justify-content: space-between;
 }
 
-
 .languages__active {
-  margin: 0;
-}
-
-.languages__active::before {
-  content: "[";
-}
-
-.languages__active::after {
-  content: "]";
+  background-color: white;
 }
 
 @media (max-width: 800px) {

@@ -1,12 +1,3 @@
-
-import React, { useEffect, useState } from 'react';
-import $ from 'jquery';
-
-// == Import
-// import './style.css';
-
-
-// == Composant
 const PlayButton = ({ }) => {
 
   const playAudio = (event) => {
@@ -30,27 +21,9 @@ const PlayButton = ({ }) => {
     }, 700)
   }
 
-  // const spinArrow = (event) => {
-  //   document.querySelector('.arrow-cursor').style.display = 'block';
-  //   // document.querySelector('.play-button__text').style.opacity = "1";
-  //   arrowCursor(event)
-  // }
-
-  // const arrowCursor = (e) => {
-  //   $('.arrow-cursor').offset({
-  //     left: e.pageX - 50,
-  //     top: e.pageY - 20
-  //   });
-  // }
-
   return (
-    <div className="play" onClick={(event) => {playAudio(event)}}>
-      <button className="play-button"/>
-      <button className="play-button play-button--black"/>
-      <span className="play-button__text">audio<br/>video</span>
-    </div>
+    <div className="play-button" onClick={(event) => {playAudio(event)}}>AUDIO / VIDEO</div>
   );
 };
 
-// == Export
 export default PlayButton;

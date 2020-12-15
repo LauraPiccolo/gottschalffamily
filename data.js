@@ -10,7 +10,7 @@ const content = {
       'wo':'<h3>Städte:</h3>Berlin, Magdeburg, Düsseldorf, Dresden, Göttingen, Hamburg, Köln, Ruhrgebiet. <br/><h3>Regionen:</h3>Brandenburg, Niedersachsen, Nordrhein-Westfalen, Hessen, Sachsen-Anhalt, Sachsen, Schleswig-Holstein, Mecklenburg-Vorpommern.',
       'premiere':'Eintritt frei<br/>Registriere dich hier per E-Mail mit Vor- und Nachname: <a href="mailto:events@storyfelder.de">events@storyfelder.de</a>  - und wir schicken dir den Link zu. Die ersten STORYFELD events werden zum Thema Glück sein.'
     },
-    'sticker': 'Freikarten<br/><a href="mailto:event@storyfelder.de">event@storyfelder.de</a>',
+    'sticker': 'Get our book for free!',
     'audioFile':'audio_de.mp3',
   },
   'en': {
@@ -24,7 +24,7 @@ const content = {
       'wo':'<h3>Cities:</h3>Berlin, Magdeburg, Düsseldorf, Dresden, Göttingen, Hamburg, Köln, Ruhrgebiet.<br/><h3>Regions:</h3>Brandenburg, Niedersachsen, Nordrhein-Westfalen, Hessen, Sachsen-Anhalt, Sachsen, Schleswig-Holstein, Mecklenburg-Vorpommern.',
       'premiere':'Free entrance<br/>Register by email with your first and surname, here: <a href="mailto:events@storyfelder.de">events@storyfelder.de</a> - and we\'ll send you the link. The first STORYFELD events will be on the theme of Happiness.'
     },
-    'sticker': 'Free tickets<br/><a href="mailto:event@storyfelder.de">event@storyfelder.de</a>',
+    'sticker': 'Get our book for free!',
     'audioFile':'audio_en.mp3',
   },
   'ar': {
@@ -48,7 +48,7 @@ const content = {
       'wo':'<h3>:المدن</h3><br/>Berlin, Magdeburg, Düsseldorf, Dresden, Göttingen, Hamburg, Köln, Ruhrgebiet. <br/><h3>:المناطق</h3><br/>Brandenburg, Niedersachsen, Nordrhein-Westfalen, Hessen, Sachsen-Anhalt, Sachsen, Schleswig-Holstein, Mecklenburg-Vorpommern.',
       'premiere':'الدخول مجاني<br/>التسجيل عن طريق الإيميل بإرسال اسمك الكامل:<br/>events@storyfelder.de<br/>وبالمقابل سوف نقوم بإرسال الرابط لك.أول حدث لحقل القصص سيكون بعنوان السعادة'
     },
-    'sticker': 'تذكرة مجانية<br/><a href="mailto:event@storyfelder.de">event@storyfelder.de</a>',
+    'sticker': 'Get our book for free!',
     'audioFile':'audio_ar.wav',
   },
 };

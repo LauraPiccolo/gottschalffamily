@@ -1,11 +1,3 @@
-
-import React, { useEffect, useState } from 'react';
-
-// == Import
-// import './style.css';
-
-
-// == Composant
 const Languages = ({ setLang, currentLang }) => {
 
   const languages = ['de','en','ar'];
