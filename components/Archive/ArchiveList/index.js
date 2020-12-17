@@ -9,7 +9,6 @@ const ArchiveList = ({ archiveMode, archiveList }) => {
      const currentScroll = event.currentTarget.scrollTop;
      const maxScroll = event.currentTarget.querySelector('ul').clientHeight - event.target.clientHeight;
      const ratio = maxScroll / archiveList[archiveMode].length;
-     console.log(Math.round(currentScroll / ratio / 20));
      setOpen(Math.round(currentScroll / ratio / 20));
   }
 
@@ -31,7 +30,7 @@ const ArchiveList = ({ archiveMode, archiveList }) => {
                   {
                     place.events.map((event) => (
                       <li>
-                        <Link href={`/${event.link}`}>
+                        <Link href={`/${place}-${event.theme}`}>
                           <div>
                           <h3>{event.theme}</h3>
                           <h3>{event.date}</h3>
@@ -60,7 +59,7 @@ const ArchiveList = ({ archiveMode, archiveList }) => {
                   {
                     theme.events.map((event) => (
                       <li>
-                        <Link href={`/${event.link}`}>
+                        <Link href={`/${event.city}-${theme}`}>
                           <div>
                             <h3>{event.city}</h3>
                             <h3>{event.date}</h3>

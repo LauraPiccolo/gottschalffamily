@@ -1,0 +1,72 @@
+/* event__info
+event__info__theme
+event__info__dateplace */
+
+.event__info {
+    width: calc(100% - 40px);
+    margin: 0px 20px 20px 20px;
+    font-family: 'Zarid';
+    border: solid 1px black;
+    font-size: 40px;
+    height: 50px;
+}
+
+.event__info h2 {
+    display: inline-block;
+    position: absolute;
+    margin-top: -7px;
+}
+
+.event__info__dateplace {
+    right: 35px;
+}
+
+.event__info__theme {
+    left: 35px;
+}
+
+.event__stories {
+    overflow: scroll;
+    height: calc(100% - 195px);
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.event__stories__single {
+    padding: 20px;
+    background-color: rgba(255, 255,255, 0.6);
+}
+
+.event__stories__single__title {
+    width: 100%;
+    border-bottom: solid 1px black;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.event__stories__single__content {
+    padding-left: 100px;
+}
+
+.story__watch video {
+    height: 500px;
+}
+
+.story__listen audio {
+    width: calc(100vw - 140px);
+}
+
+.story__read img {
+    width: 200px;
+    display: inline-block;
+    margin-left: -100px;
+}
+
+.story__read p {
+    width: calc(100vw - 265px);
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 25px;
+}

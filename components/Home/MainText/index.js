@@ -98,8 +98,6 @@ const MainText = ({ title, content, next, location, lang }) => {
     event.preventDefault()
     document.querySelector('.cities--big').style.display = 'block';
   }
-
-  console.log(next);
   
   useEffect(() => {
     if(location === 'wo') {

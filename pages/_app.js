@@ -17,6 +17,9 @@ import '../components/Now/EventList/style.css'
 import '../components/Now/Theme/style.css'
 import '../components/Archive/ArchiveList/style.css'
 import '../components/Archive/ArchiveToolBar/style.css'
+import '../components/Event/EventToolBar/style.css'
+import '../components/Event/EventFeedback/style.css'
+import '../components/Event/style.css'
 
 class MyApp extends App {
     

@@ -1,9 +1,12 @@
 import { useState } from 'react'
+import { getEvents } from '../lib/api'
 
 import ArchiveList from '../components/Archive/ArchiveList'
 import ArchiveToolBar from '../components/Archive/ArchiveToolBar'
 
-const Archive = () => {
+const Archive = ({ content }) => {
+
+  console.log(content);
 
   const [archiveMode, setArchiveMode] = useState('place');
   const archiveList = {
@@ -262,5 +265,12 @@ const Archive = () => {
     </div>
   )
 }
+
+// export async function getStaticProps({ preview = null }) {
+//   const content = (await getEvents(preview)) || []
+//   return {
+//       props: { content },
+//   }
+// }
 
 export default Archive

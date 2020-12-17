@@ -1,0 +1,20 @@
+.event__feedback__media {
+    display: inline-block;
+    height: 100%;
+}
+
+.event__feedback__scroll {
+    width: 2000px;
+    padding-top: 20px;
+    height: 100%;
+}
+
+.event__feedback {
+    width: calc(100% - 40px);
+    margin-left: 20px;
+    overflow-x: scroll;
+    height: calc(100% - 195px);
+    overflow-y: hidden;
+    position: absolute;
+    bottom: 20px;
+}
