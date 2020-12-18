@@ -62,10 +62,6 @@ export default function homeSection({ fetchedContent }) {
   }
 
   useEffect(() => {
-    if(document.body.clientWidth < 700) {
-      document.querySelector('.play-button--black').style.animation = 'unset';
-      setTimeout(() => {document.querySelector('.play-button--black').style.animation = 'grow--mobile 2.5s ease-in-out';}, 500);
-    }
     setNext(index() === pages.length - 1 ? 0 : index() + 1);
     setLocation(router.query.homeSection);
   }, [router.query.homeSection])

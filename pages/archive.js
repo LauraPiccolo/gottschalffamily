@@ -1,263 +1,57 @@
 import { useState } from 'react'
-import { getEvents } from '../lib/api'
+import { getThemes, getEventList } from '../lib/api'
 
 import ArchiveList from '../components/Archive/ArchiveList'
 import ArchiveToolBar from '../components/Archive/ArchiveToolBar'
 
-const Archive = ({ content }) => {
+const Archive = ({ themes, events }) => {
 
-  console.log(content);
+  const futureThemes = themes.filter((theme) => theme.content.Timing[0] === "archived")
 
-  const [archiveMode, setArchiveMode] = useState('place');
+  const newThemes = futureThemes.map((theme) => ({
+    title: [theme.content.Title],
+    events: [...events.map((event) => ({
+      city: event.full_slug.split('archived-events/').pop().split('/')[0],
+      date: event.content.date.replace(' 00:00','').replace(/-/g,'.'),
+      link: `${event.full_slug.split('archived-events/').pop().split('/')[0]}-${theme.content.title}`
+    }))],
+  }))
+
+  // Check all the event one by one
+  // If their name is not there yet, add them to array
+  // (Compare with existing array before)
+  // Create a key for each array, with each event (filter allevents)
+
+  let cityList = [];
+  events.forEach(element => {
+    let exists = false;
+    const thisCity = element.full_slug.split('archived-events/').pop().split('/')[0]
+    cityList.forEach((city) => {
+      if (city === thisCity) exists = true;
+    })
+    if(!exists) cityList.push(thisCity);
+  });
+
+  const newPlaces = cityList.map((city) => ({
+    city: city,
+    events: events.filter((event) => event.full_slug.split('archived-events/').pop().split('/')[0] === city).map((event) => ({
+      theme: event.content.theme.name,
+      date: event.content.date.replace(' 00:00','').replace(/-/g,'.'),
+      link:`${event.full_slug.split('archived-events/').pop().split('/')[0]}-${event.content.theme.name}`,
+    }))
+  }))
+
   const archiveList = {
-    place: [
-      {
-        city: 'Berlin',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        city: 'Hamburg',
-        events: [
-          {
-            theme: 'Happiness',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Event2',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            theme: 'Happiness',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      
-    ],
-
     theme: [
-      {
-        title: 'Happiness',
-        events: [
-          {
-            city: 'Berlin',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            city: 'Hamburg',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            city: 'Köln',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
-      {
-        title: 'Sadness',
-        events: [
-          {
-            city: 'Berlin',
-            date: '10.12.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            city: 'Hamburg',
-            date: '10.08.2020',
-            link: '/archive/berlin/happiness'
-          },
-          {
-            city: 'Köln',
-            date: '07.01.2022',
-            link: '/archive/berlin/happiness'
-          }
-        ]
-      },
+      ...newThemes
+    ],
+    place: [
+      ...newPlaces
     ]
   }
 
+  const [archiveMode, setArchiveMode] = useState('place');
+  
   return (
     <div id="archive">
       <ArchiveToolBar archiveMode={archiveMode} setArchiveMode={setArchiveMode}/>
@@ -266,11 +60,12 @@ const Archive = ({ content }) => {
   )
 }
 
-// export async function getStaticProps({ preview = null }) {
-//   const content = (await getEvents(preview)) || []
-//   return {
-//       props: { content },
-//   }
-// }
+export async function getServerSideProps({ preview = null }) {
+  const themes = (await getThemes(preview)) || []
+  const events = (await getEventList(preview)) || []
+  return {
+      props: { themes, events },
+  }
+}
 
 export default Archive
