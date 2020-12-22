@@ -1,9 +1,23 @@
 import Link from 'next/link'
 import { useState } from 'react';
+// const StoryblokClient = require('storyblok-js-client')
+
+// let Storyblok = new StoryblokClient({
+//     accessToken: 'aYu5zqsg2dHE3YmFmsDgFAtt'
+// })
+
 
 const Credits= ({ lang, impressum }) => {
 
+  // console.log(impressum.rte);
+
   const [impressumOpen, setImpressumOpen] = useState(false);
+  // let Storyblok = new StoryblokClient({
+  //   accessToken: 'aYu5zqsg2dHE3YmFmsDgFAtt'
+  // })
+
+  // const impressumText = Storyblok.richTextResolver.render(impressum.Rte);
+  // console.log(impressumText)
 
   const credits = {
       de: {
@@ -41,7 +55,7 @@ const Credits= ({ lang, impressum }) => {
         <div className="home__footer__impressum" style={{height: impressumOpen ? 'auto':'0px'}}>
           <button className="home__footer__impressum__close" onClick={() => setImpressumOpen(false)}/>
           <h4>{credits[lang].impressum}</h4>
-          <p dangerouslySetInnerHTML={{ __html: impressum}} />
+          <p className="rte" dangerouslySetInnerHTML={{ __html: impressum}} />
         </div>
     </footer>
   );
