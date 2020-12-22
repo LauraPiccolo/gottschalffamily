@@ -30,11 +30,11 @@ const ArchiveList = ({ archiveMode, archiveList }) => {
                   {
                     place.events.map((event) => (
                       <li>
-                        <Link href={`/${place}-${event.theme}`}>
-                          <div>
+                        <Link href={`/archive/${place.city}-${event.theme.toLowerCase()}`}>
+                          <a>
                           <h3>{event.theme}</h3>
                           <h3>{event.date}</h3>
-                          </div>
+                          </a>
                         </Link>
                       </li>
                     ))

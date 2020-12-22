@@ -14,7 +14,7 @@ export default function event({ fetchedContent }) {
 
   const router = useRouter()
   const [location, setLocation] = useState(router.query.event)
-  const [media, setMedia] = useState('watch');
+  const [media, setMedia] = useState('read');
   const place = location.split('-')[0]
   const theme = location.split('-')[1]
   const stories = [1,2,3];

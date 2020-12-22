@@ -84,3 +84,38 @@ body {
   position: absolute;
   top: 50px;
 }
+
+.book {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 60px);
+  align-items: center;
+  align-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: -60px;
+}
+
+.book__soon {
+  width: 100%;
+  text-align: center;
+  height: 50px;
+  font-size: 25px;
+
+}
+
+.book a {
+  width: auto;
+  padding: 0 20px;
+  height: 40px;
+  border: solid 1px black;
+  text-align: center;
+  font-size: 20px;
+  text-transform: uppercase;
+  line-height: 37px;
+  margin-top: 0px;
+}
+
+.book a:hover {
+  background-color: white;
+}

@@ -6,6 +6,7 @@ import MainText from '../../components/Home/MainText'
 import PlayButton from '../../components/Home/PlayButton'
 import FullScreenVideo from '../../components/Home/FullScreenVideo'
 import Player from '../../components/Home/Player'
+import Credits from '../../components/Home/Credits'
 // FETCH
 import staticContent from '../../data'
 
@@ -18,6 +19,8 @@ export default function homeSection({ fetchedContent }) {
 
   const [next, setNext] = useState(1);
   const [location, setLocation] = useState(router.query.homeSection);
+
+  const impressumText = fetchedContent.Impressum;
 
   const content = {
     ...staticContent,
@@ -73,6 +76,7 @@ export default function homeSection({ fetchedContent }) {
       <FullScreenVideo lang={lang} />
       <Player audioFile={content[lang].audioFile}/>
       <MainText title={content[lang].titles[index()]} content={content[lang].content[location]} next={pages[next]} location={location} lang={lang}/>
+      <Credits lang={lang} impressum={impressumText}/>
     </div>
   )
 }

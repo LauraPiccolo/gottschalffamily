@@ -6,9 +6,9 @@ import ArchiveToolBar from '../components/Archive/ArchiveToolBar'
 
 const Archive = ({ themes, events }) => {
 
-  const futureThemes = themes.filter((theme) => theme.content.Timing[0] === "archived")
+  const archivedThemes = themes.filter((theme) => theme.content.Timing[0] === "archived")
 
-  const newThemes = futureThemes.map((theme) => ({
+  const newThemes = archivedThemes.map((theme) => ({
     title: [theme.content.Title],
     events: [...events.map((event) => ({
       city: event.full_slug.split('archived-events/').pop().split('/')[0],
@@ -16,11 +16,6 @@ const Archive = ({ themes, events }) => {
       link: `${event.full_slug.split('archived-events/').pop().split('/')[0]}-${theme.content.title}`
     }))],
   }))
-
-  // Check all the event one by one
-  // If their name is not there yet, add them to array
-  // (Compare with existing array before)
-  // Create a key for each array, with each event (filter allevents)
 
   let cityList = [];
   events.forEach(element => {

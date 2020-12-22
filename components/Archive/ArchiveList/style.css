@@ -26,16 +26,17 @@
 .archive__list__item h2 {
   width: 100%;
   border-bottom: solid 1px black;
+  text-transform: capitalize;
 }
 
-.archive__list__item__events ul li div, .archive__list__item__theme ul li div {
+.archive__list__item__events ul li a, .archive__list__item__theme ul li div {
   margin-left: 40px;
   padding-top: 10px;
   font-size: 1rem;
   display: flex;
   align-items: space-between;
   justify-content: space-between;
-  border-bottom: solid .5px black;
+  border-bottom: solid .5px lightgrey;
   cursor: pointer;
   font-size: 15px;
   text-transform: uppercase;

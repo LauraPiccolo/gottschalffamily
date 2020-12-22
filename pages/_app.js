@@ -20,6 +20,7 @@ import '../components/Archive/ArchiveToolBar/style.css'
 import '../components/Event/EventToolBar/style.css'
 import '../components/Event/EventFeedback/style.css'
 import '../components/Event/style.css'
+import '../components/Home/Credits/style.css'
 
 class MyApp extends App {
     
