@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const HomeToolbar= ({ navList, current }) => {
 
-  const pages = ['storyfeld','warum','wie','wer','wo'];
+  const pages = ['was','warum','wie','wer','wo'];
 
   return (
     <div className="home__toolbar">

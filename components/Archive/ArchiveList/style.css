@@ -11,7 +11,7 @@
 }
 
 .archive__list--ul {
-  pointer-events: none;
+  /* pointer-events: none; */
   width: calc(100vw - 40px);
   position: fixed;
 }

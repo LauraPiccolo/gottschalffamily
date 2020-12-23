@@ -9,6 +9,7 @@ event__info__dateplace */
     border: solid 1px black;
     font-size: 40px;
     height: 50px;
+    background-color: white;
 }
 
 .event__info h2 {
@@ -42,7 +43,7 @@ event__info__dateplace */
 .event__stories__single__title {
     width: 100%;
     border-bottom: solid 1px black;
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 20px;
 }
 
@@ -51,7 +52,8 @@ event__info__dateplace */
 }
 
 .story__watch video {
-    height: 500px;
+    max-height: 500px;
+    max-width: calc(100vw - 140px);
 }
 
 .story__listen audio {

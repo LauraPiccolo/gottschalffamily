@@ -9,6 +9,11 @@
     height: 100%;
 }
 
+.event__feedback::-webkit-scrollbar {
+    display: none;
+}
+
+
 .event__feedback {
     width: calc(100% - 40px);
     margin-left: 20px;

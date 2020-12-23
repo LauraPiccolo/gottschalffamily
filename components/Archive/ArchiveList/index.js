@@ -5,16 +5,16 @@ const ArchiveList = ({ archiveMode, archiveList }) => {
 
   const [open, setOpen] = useState(0);
 
-  const changeOpen = (event) => {
-     const currentScroll = event.currentTarget.scrollTop;
-     const maxScroll = event.currentTarget.querySelector('ul').clientHeight - event.target.clientHeight;
-     const ratio = maxScroll / archiveList[archiveMode].length;
-     setOpen(Math.round(currentScroll / ratio / 20));
-  }
+  // const changeOpen = (event) => {
+  //    const currentScroll = event.currentTarget.scrollTop;
+  //    const maxScroll = event.currentTarget.querySelector('ul').clientHeight - event.target.clientHeight;
+  //    const ratio = maxScroll / archiveList[archiveMode].length;
+  //    setOpen(Math.round(currentScroll / ratio / 20));
+  // }
 
-  useEffect(() => {
-    document.querySelector('.archive__list__secret-scroll').style.height = document.querySelector('.archive__list ul').clientHeight*2 + 'px';
-  })
+  // useEffect(() => {
+  //   document.querySelector('.archive__list__secret-scroll').style.height = document.querySelector('.archive__list ul').clientHeight*2 + 'px';
+  // })
 
   return (
     <div className="archive__list" onScroll={(event) => changeOpen(event)}>
@@ -76,7 +76,7 @@ const ArchiveList = ({ archiveMode, archiveList }) => {
         </ul>
         )
       }
-      <div className="archive__list__secret-scroll"/>
+      {/* <div className="archive__list__secret-scroll"/> */}
     </div>
   )
 }

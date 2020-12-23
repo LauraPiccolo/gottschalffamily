@@ -14,7 +14,7 @@ const EventFeedback = ({ medias }) => {
       });
       document.querySelector('.event__feedback__scroll').style.width = `${totalWidth}px`
     }, 500);
-  })
+  }, [medias])
 
   const horizontalScroll = (event) => {
     if(document.querySelectorAll('.event__feedback').length > 0) {

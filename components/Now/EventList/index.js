@@ -13,6 +13,7 @@ const EventList = ({ theme }) => {
           date: theme[`City_date_${index}`],
           live: theme[`City_stream_link_${index}`].url,
           register: theme[`City_register_link_${index}`].email,
+          people: theme[`City_people_${index}`],
         }
        events.push(newCity);
       }
@@ -28,6 +29,13 @@ const EventList = ({ theme }) => {
         eventList.map((event) => (
           <li className="now__events__event">
             <h3>{event.city}</h3>
+            <div className="now__events__event__people">
+              {
+                event.people !== "" && (
+                  <p>{event.people}</p>
+                )
+              }
+              </div>
             <div className="now__events__event__info">
               <a className="now__events__event__info__register" href={`mailto:${event.register}`}>Register</a>
               <a className="now__events__event__info__live" href={event.live} target="_blank">Link to livestream</a>

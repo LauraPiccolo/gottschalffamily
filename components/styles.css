@@ -46,6 +46,7 @@ body, .container, #__next {
   display: none;
   cursor: none;
   background-color: black;
+  top: 0;
 }
 
 @media (hover: none) {

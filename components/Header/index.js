@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 const Header = ({ headerSections }) => {
 
   const router = useRouter();
-  const navLinks = ["/home/storyfeld","/now","/archive","/book"]
+  const navLinks = ["/home/was","/now","/archive","/book"]
   const navLinksMicro = ["/home","/now","/archive","/book"]
 
 

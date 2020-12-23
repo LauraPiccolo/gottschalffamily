@@ -16,7 +16,7 @@ const Introduction = ({ }) => {
   }
 
   return (
-    <Link href="/home/storyfeld" onClick={(event) => showArrow(event)}>
+    <Link href="/home/was" onClick={(event) => showArrow(event)}>
       <section className="introduction">
         <img className="introduction__image introduction__image--mobile" src="intro-mobile.jpg" />
         <img className="introduction__image introduction__image--desktop" src="intro-desktop.jpeg" />

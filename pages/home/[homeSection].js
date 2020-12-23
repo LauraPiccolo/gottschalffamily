@@ -7,15 +7,19 @@ import PlayButton from '../../components/Home/PlayButton'
 import FullScreenVideo from '../../components/Home/FullScreenVideo'
 import Player from '../../components/Home/Player'
 import Credits from '../../components/Home/Credits'
+import Sticker from '../../components/Sticker'
+import $ from 'jquery'
 // FETCH
 import staticContent from '../../data'
 
 import HomeToolbar from '../../components/Home/HomeToolbar'
 
-export default function homeSection({ fetchedContent }) {
-  const lang = 'de'
+export default function homeSection({ fetchedContent, lang }) {
+
+  console.log('LANGUE: '+lang);
   const router = useRouter()
-  const pages = ['storyfeld','warum','wie','wer','wo']
+  const pages = ['was','warum','wie','wer','wo']
+  lang="de"
 
   const [next, setNext] = useState(1);
   const [location, setLocation] = useState(router.query.homeSection);
@@ -27,7 +31,7 @@ export default function homeSection({ fetchedContent }) {
     de: {
       ...staticContent.de,
       content: {
-        storyfeld: fetchedContent.Was_de,
+        was: fetchedContent.Was_de,
         warum: fetchedContent.Warum_de,
         wie: fetchedContent.Wie_de,
         wer: fetchedContent.Wer_de,
@@ -37,7 +41,7 @@ export default function homeSection({ fetchedContent }) {
     en: {
       ...staticContent.en,
       content: {
-        storyfeld: fetchedContent.Was_en,
+        was: fetchedContent.Was_en,
         warum: fetchedContent.Warum_en,
         wie: fetchedContent.Wie_en,
         wer: fetchedContent.Wer_en,
@@ -47,7 +51,7 @@ export default function homeSection({ fetchedContent }) {
     ar: {
       ...staticContent.ar,
       content: {
-        storyfeld: fetchedContent.Was_ar,
+        was: fetchedContent.Was_ar,
         warum: fetchedContent.Warum_ar,
         wie: fetchedContent.Wie_ar,
         wer: fetchedContent.Wer_ar,
@@ -69,8 +73,40 @@ export default function homeSection({ fetchedContent }) {
     setLocation(router.query.homeSection);
   }, [router.query.homeSection])
 
+  const closePicture = (event) => {
+    event.target.style.display = 'none'
+    hideCross();
+  }
+
+  const crossCursor = (e) => {
+    $('.cross-cursor').offset({
+      left: e.pageX - 40,
+      top: e.pageY - 40
+    });
+  }
+
+  const showCross = (event) => {
+    document.querySelector('.cross-cursor').style.display = 'block';
+    crossCursor(event);
+  }
+
+  const hideCross = () => {
+    document.querySelector('.cross-cursor').style.display = 'none';
+  }
+
   return (
     <div className="home">
+      <img className="arrow-cursor" src="/black-arrow.png" alt="cursor" />
+      <img className="cross-cursor" src="/cross.png" alt="cursor" />
+      <img className="cities--big" 
+      src="/city.png" 
+      alt="wo" 
+      onClick={(event) => closePicture(event)}
+      onMouseMove={(event) => crossCursor(event)}
+      onMouseEnter={(event) => showCross(event)}
+      onMouseLeave={hideCross}
+      />
+      <Sticker content={content[lang].sticker} />
       <HomeToolbar navList={content[lang].navList} current={router.query.homeSection}/>
       <PlayButton />
       <FullScreenVideo lang={lang} />

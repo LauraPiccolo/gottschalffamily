@@ -16,12 +16,13 @@
 
 .now__events__event__info {
   padding-left: 40px;
-  padding-top: 15px;
+  padding-top: 7px;
   font-size: 1rem;
   display: flex;
   align-items: space-between;
   justify-content: space-between;
   font-size: 15px;
+  margin-bottom: 25px;
   text-transform: uppercase;
 }
 
@@ -36,4 +37,14 @@
 
 .now__events__event__info__register:hover, .now__events__event__info__live:hover {
   background-color: white;
+}
+
+.now__events__event__info__people {
+  text-transform: none;
+}
+
+.now__events__event__people p {
+  margin-left: 40px;
+  margin-top: 7px;
+  margin-bottom: 0;
 }

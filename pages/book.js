@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useEffect } from 'react';
 
 const Book = () => {
 
@@ -17,11 +18,11 @@ const Book = () => {
     // Pass
     
     const lang = 'de';
-
+    
   return (
     <div className="book">
       <p className="book__soon">{bookText[lang]}</p>
-      <Link className="book__back" href="/home/storyfeld">Back to Home</Link>
+      <Link className="book__back" href="/home/was">Back to Home</Link>
     </div>
   )
 }

@@ -13,7 +13,7 @@ const FullScreenVideo = ({ lang }) => {
     document.querySelector('.player').style.opacity = '0';
     document.querySelector('.player__cursor').style.animationPlayState = 'paused';
     document.querySelector('.player__audio').pause();
-    document.querySelector('.video').style.pointerEvents = 'all';
+    document.querySelector('.video').style.pointerEvents = 'none';
     hideCross();
   }
 
