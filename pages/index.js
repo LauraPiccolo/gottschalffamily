@@ -4,8 +4,6 @@ import { getHome } from '../lib/api'
 
 const Home = ({ content }) => {
 
-  console.log(content);
-
   return (
     <div id="home__intro">
       <Introduction />

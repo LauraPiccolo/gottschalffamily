@@ -6,11 +6,9 @@ const Header = ({ headerSections }) => {
   const router = useRouter();
   const navLinks = ["/home/was","/now","/archive","/book"]
   const navLinksMicro = ["/home","/now","/archive","/book"]
-
-
   return (
     <header className="header">
-      <nav className="header__nav">
+      <nav className="header__nav header__nav--desktop">
         <ul>
           {
             headerSections.map((name, index) => (
@@ -18,6 +16,21 @@ const Header = ({ headerSections }) => {
                 <Link href={navLinks[index]}>{name}</Link>
               </li>
             ))
+          }
+        </ul>
+      </nav>
+      <nav className="header__nav header__nav--mobile">
+        <ul>
+          {
+            headerSections.map((name, index) => {
+              if(router.pathname.indexOf(navLinksMicro[index]) >= 0) {
+                return (
+                  <li className={`header__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' header__nav__li--active':''}`}>
+                    Storyfelder — {name === 'Storyfeld' ? 'about' : name}
+                  </li>
+                )}
+              
+              })
           }
         </ul>
       </nav>

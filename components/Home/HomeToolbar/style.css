@@ -33,6 +33,10 @@
   background-color: white;
 }
 
+.home__toolbar__nav, .home__toolbar__nav ul {
+  height: 100%;
+}
+
 .home__toolbar ul {
   display: flex;
   align-items: space-around;

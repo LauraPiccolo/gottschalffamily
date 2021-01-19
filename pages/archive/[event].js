@@ -24,7 +24,6 @@ export default function event({ fetchedContent }) {
   useEffect(() => {
     if(media === "surprise") {
       const randomNumber = Math.round(Math.random()*3);
-      console.log(randomNumber);
       setMedia(modes[randomNumber]);
     }              
   },[media])
@@ -33,29 +32,32 @@ export default function event({ fetchedContent }) {
 
   return (
     <div className="event">
-      <div className="event__info">
-        <h2 className="event__info__theme">{theme.charAt(0).toUpperCase() + theme.slice(1)}</h2>
-        <h2 className="event__info__dateplace">{place.charAt(0).toUpperCase() + place.slice(1)} — {eventInfo.date.replace(' 00:00', '').replace(/-/g,'.')}</h2>
+      <div className="event-wrapper">
+        <div className="event__info">
+          <h2 className="event__info__theme">{theme.charAt(0).toUpperCase() + theme.slice(1)}</h2>
+          <h2 className="event__info__dateplace">{place.charAt(0).toUpperCase() + place.slice(1)} — {eventInfo.date.replace(' 00:00', '').replace(/-/g,'.')}</h2>
+        </div>
+        <EventToolBar media={media} setMedia={setMedia} lang='en'/>
+        { media !== 'feedback' && (
+          <div className="event__stories">
+            {
+              stories.map((index) => (
+                <div className="event__stories__single">
+                <h3 className="event__stories__single__title">{eventInfo[`Title${index}`]}</h3>
+                <div className="event__stories__single__content">
+                  { media === 'read' && ( <StoryRead text={eventInfo[`Text${index}`]} photo={eventInfo[`Photo${index}`].filename}/> )}
+                  { media === 'watch' && ( <StoryWatch video={eventInfo[`Video${index}`].filename} /> )}
+                  { media === 'listen' && ( <StoryListen audio={eventInfo[`Audio${index}`].filename}/> )}
+                </div>
+              </div>
+              ))
+            }
+          </div>
+          )
+        }
+        { media === 'feedback' && ( <EventFeedback medias={eventInfo.Feedback_medias}/> )}
       </div>
       <EventToolBar media={media} setMedia={setMedia} lang='en'/>
-      { media !== 'feedback' && (
-        <div className="event__stories">
-          {
-            stories.map((index) => (
-              <div className="event__stories__single">
-              <h3 className="event__stories__single__title">{eventInfo[`Title${index}`]}</h3>
-              <div className="event__stories__single__content">
-                { media === 'read' && ( <StoryRead text={eventInfo[`Text${index}`]} photo={eventInfo[`Photo${index}`].filename}/> )}
-                { media === 'watch' && ( <StoryWatch video={eventInfo[`Video${index}`].filename} /> )}
-                { media === 'listen' && ( <StoryListen audio={eventInfo[`Audio${index}`].filename}/> )}
-              </div>
-            </div>
-            ))
-          }
-        </div>
-        )
-      }
-      { media === 'feedback' && ( <EventFeedback medias={eventInfo.Feedback_medias}/> )}
     </div>
   )
 }

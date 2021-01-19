@@ -72,3 +72,87 @@ event__info__dateplace */
     vertical-align: top;
     margin-left: 25px;
 }
+
+.event__feedback__scroll {
+    display: block;
+}
+.event__feedback__mobile {
+    display: none;
+}
+
+@media (max-width: 750px) {
+    .event {
+        height: 100%;
+    }
+
+    .event-wrapper {
+       bottom: unset !important;
+    }
+
+    .event__info__dateplace {
+        right: 20px;
+    }
+    
+    .event__info__theme {
+        left: 20px;
+    }
+    .event__info {
+        font-size: 30px;
+        border: none;
+        border-bottom: solid 1px black;
+        background-color: transparent;
+        margin-top: 15px;
+        height: 40px;
+    }
+
+    .event__stories {
+        height: calc(100% - 55px);
+    }
+
+    .event__stories__single {
+        width: calc(100vw - 20px);
+    }
+
+    .story__read img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .event__stories__single__content {
+        width: 100%;
+        padding-left: 20px;
+    }
+
+    .event__stories__single__title {
+        font-size: 20px;
+    }
+    .story__read p {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .story__watch video {
+        max-height: 500px;
+        max-width: 100%;
+    }
+
+    .story__listen audio {
+        width: 100%;
+    }
+
+    .event__feedback {
+        height: calc(100% - 55px);
+        bottom: 0;
+        overflow-y: scroll;
+    }
+
+    .event__feedback__scroll {
+        display: none;
+    }
+    .event__feedback__mobile {
+        display: block;
+    }
+    .event__feedback__media{
+        width: 100%;
+    }
+}

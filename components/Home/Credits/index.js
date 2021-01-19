@@ -4,12 +4,9 @@ import { render } from 'storyblok-rich-text-react-renderer';
 
 
 const Credits= ({ lang, impressum }) => {
-
-  console.log(impressum)
   const [impressumOpen, setImpressumOpen] = useState(false);
 
   const impressumText = render(impressum);
-  console.log(impressumText)
 
   const credits = {
       de: {

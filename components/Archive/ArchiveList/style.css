@@ -4,7 +4,7 @@
   margin-top: 40px;
   height: calc(100% - 117px);
   position: absolute;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .archive__list__secret-scroll {
@@ -13,7 +13,7 @@
 .archive__list--ul {
   /* pointer-events: none; */
   width: calc(100vw - 40px);
-  position: fixed;
+  /* position: fixed; */
 }
 
 .archive__list__item {
@@ -47,6 +47,13 @@
   overflow: hidden;
 }
 
-.archive__list__item--open .archive__list__item__events, .archive__list__item--open .archive__list__item__theme {
+/* .archive__list__item--open .archive__list__item__events, .archive__list__item--open .archive__list__item__theme {
   height: 100px;
+} */
+
+@media (max-width: 750px) {
+  .archive__list--ul {
+    width: calc(100vw - 60px);
+    margin: 20px;
+  }
 }

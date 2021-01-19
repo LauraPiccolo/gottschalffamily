@@ -21,6 +21,7 @@ import '../components/Event/EventToolBar/style.css'
 import '../components/Event/EventFeedback/style.css'
 import '../components/Event/style.css'
 import '../components/Home/Credits/style.css'
+import '../components/Menu/style.css'
 
 class MyApp extends App {
     

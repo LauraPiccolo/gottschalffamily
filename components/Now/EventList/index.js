@@ -19,7 +19,6 @@ const EventList = ({ theme }) => {
       }
       setEventList(events);
     }
-    console.log(eventList);
   }, [theme]);
 
   return (
@@ -28,7 +27,7 @@ const EventList = ({ theme }) => {
       {
         eventList.map((event) => (
           <li className="now__events__event">
-            <h3>{event.city}</h3>
+            <h3>{event.city}<span className="now__events__event__date">{event.date.replace(' 00:00','').replace(/-/g, '.')}</span></h3>
             <div className="now__events__event__people">
               {
                 event.people !== "" && (

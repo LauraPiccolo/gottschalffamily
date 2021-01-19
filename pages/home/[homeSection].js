@@ -15,8 +15,6 @@ import staticContent from '../../data'
 import HomeToolbar from '../../components/Home/HomeToolbar'
 
 export default function homeSection({ fetchedContent, lang }) {
-
-  console.log('LANGUE: '+lang);
   const router = useRouter()
   const pages = ['was','warum','wie','wer','wo']
   lang="de"

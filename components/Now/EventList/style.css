@@ -12,6 +12,7 @@
   width: 100%;
   border-bottom: solid 1px black;
   font-size: 20px;
+  position: relative;
 }
 
 .now__events__event__info {
@@ -47,4 +48,60 @@
   margin-left: 40px;
   margin-top: 7px;
   margin-bottom: 0;
+}
+
+.now__events__event__date {
+  display: none;
+}
+.now__events__event__info__date {
+  display: block;
+}
+
+@media (max-width: 750px) {
+  .now__events__event {
+    width: calc(100vw - 60px);
+  }
+
+  .now__events__event__info__date {
+    display: block;
+    position: absolute;
+    bottom: unset;
+    top: 0;
+  }
+
+  .now__events__event__date {
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 0;
+    font-size: 0.75em;
+  }
+  .now__events__event__info__date {
+    display: none;
+  }
+
+  .now__events__event__info__register, .now__events__event__info__live {
+    background-color: white;
+    width: 125px;
+    text-align: center;
+    margin-left: 10px;
+    line-height: 120%;
+    padding: 10px 0;
+  }
+
+  .now__events__event__info__register {
+    line-height: 40px;
+  }
+
+  .now__events__event__info {
+    justify-content: flex-end;
+  }
+
+  .now__events__event__people p {
+    line-height: 120%;
+    font-size: 15px;
+    margin-left: 0;
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

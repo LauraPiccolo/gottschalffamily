@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import Header from './Header';
 import Languages from './Languages';
+import Menu from './Menu';
 // import Sticker from './Sticker';
 // FETCH
 import content from '../data';
@@ -19,6 +20,7 @@ const Layout = ({ children, settings }) => {
 
             <Header headerSections={content[lang].header}/>
             <Languages setLang={setLang} currentLang={lang}/>
+            <Menu headerSections={content[lang].header} setLang={setLang} lang={lang}/>
             {children}
         </div>
     )

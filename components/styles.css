@@ -58,6 +58,30 @@ body, .container, #__next {
   }
 }
 
+@media (max-width: 750px) {
+  .main, .now, .archive__list, .event-wrapper {
+    width: calc(100vw - 20px) !important;
+    height: calc(100vh - 110px) !important;
+    top: 57px !important;
+    left: 10px !important;
+    position: absolute;
+    border: solid 1px black;
+    margin-top: 0 !important;
+    overflow-y: scroll;
+    margin-left: 0 !important;
+  }
+
+  .home__toolbar, .archive__toolbar, .event-wrapper {
+    position: absolute;
+    bottom: 10px !important;
+    top: unset !important;
+    width: calc(100vw - 20px) !important;
+    left: 10px !important;
+    margin:  0 !important;
+    padding: 0 !important;
+  }
+}
+
 /* Specific */
 body {
   font-size: 1rem;

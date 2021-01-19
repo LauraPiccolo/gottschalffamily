@@ -8,6 +8,11 @@ const Languages = ({ setLang, currentLang }) => {
     setLang(lang);
   }
 
+  const toggleMenu = () => {
+    document.querySelector('.menu').classList.toggle('menu--open');
+  }
+
+
   return (
     <nav className="languages">
       <ul>
@@ -20,6 +25,7 @@ const Languages = ({ setLang, currentLang }) => {
             </li>
           ))
         }
+          <li className="header__menu" onClick={toggleMenu} /> 
       </ul>
     </nav>
   );

@@ -29,3 +29,27 @@
 .event__toolbar__button--selected {
     background-color: white;
   }
+
+.event .event__toolbar {
+  display: none;
+}
+
+.event-wrapper .event__toolbar {
+  display: block;
+}
+
+@media (max-width: 750px) {
+
+  .event .event__toolbar {
+    display: block;
+    bottom: 10px;
+    position: absolute;
+    top: unset;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+  }
+  
+  .event-wrapper .event__toolbar {
+    display: none;
+  }
+}

@@ -16,7 +16,7 @@ const EventToolBar = ({ media, setMedia, lang }) => {
       <div className="event__toolbar">
           {
               modes[lang].map((mode) => (
-                <button className={`event__toolbar__button${media === mode ? ' event__toolbar__button--selected':''}`} onClick={() => setMedia(mode)}>{mode === 'surprise' ? 'Surprise me!' : mode}</button>
+                <button className={`event__toolbar__button${media === mode ? ' event__toolbar__button--selected':''}`} onClick={() => setMedia(mode)}>{mode === 'surprise' ? 'Random' : mode}</button>
               ))
           }
       </div>
