@@ -6,8 +6,6 @@ import { render } from 'storyblok-rich-text-react-renderer';
 const Credits= ({ lang, impressum }) => {
   const [impressumOpen, setImpressumOpen] = useState(false);
 
-  const impressumText = render(impressum);
-
   const credits = {
       de: {
           impressum: 'Impressum',
@@ -27,7 +25,8 @@ const Credits= ({ lang, impressum }) => {
   };
 
   return (
-    <footer className="home__footer" style={{bottom: impressumOpen ? '0px' : '-20px', backgroundColor: impressumOpen ? '#f5f7fa':'transparent', borderTop: impressumOpen ? 'solid 1px black':'none'}}>
+    <footer className={`home__footer${impressumOpen ? ' home__footer--open':''}`}>
+      <div className='home__footer__close' onClick={() => setImpressumOpen(false)}/>
       <div className="home__footer__small">
         <div className="home__footer__logos" style={{display: impressumOpen ? 'none':'block'}}>
           <a href="https://neustartkultur.de/" target="_blank"><img src="/logos/nsk.png"/></a>
@@ -44,7 +43,7 @@ const Credits= ({ lang, impressum }) => {
         <div className="home__footer__impressum" style={{height: impressumOpen ? 'auto':'0px'}}>
           <button className="home__footer__impressum__close" onClick={() => setImpressumOpen(false)}/>
           <h4>{credits[lang].impressum}</h4>
-          <p className="rte" dangerouslySetInnerHTML={{ __html: impressumText}} />
+          <p className="rte">{render(impressum)}</p>
         </div>
     </footer>
   );

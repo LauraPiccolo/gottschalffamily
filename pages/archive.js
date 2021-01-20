@@ -4,7 +4,7 @@ import { getThemes, getEventList } from '../lib/api'
 import ArchiveList from '../components/Archive/ArchiveList'
 import ArchiveToolBar from '../components/Archive/ArchiveToolBar'
 
-const Archive = ({ themes, events }) => {
+const Archive = ({ lang, themes, events }) => {
 
   const archivedThemes = themes.filter((theme) => theme.content.Timing[0] === "archived")
 

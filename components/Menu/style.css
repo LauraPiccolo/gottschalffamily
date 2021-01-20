@@ -10,10 +10,8 @@
     text-transform: uppercase;
     top: 0;
     display: none;
-}
-
-.menu--open {
-    display: flex;
+    flex-direction: column;
+    padding-bottom: 200px;
 }
 
 .menu__nav__li {
@@ -24,4 +22,10 @@
 
 .menu__nav__li--active a {
     border-bottom: solid 1px black;
+}
+
+@media (max-width: 750px) {
+    .menu--open {
+        display: flex;
+    }
 }

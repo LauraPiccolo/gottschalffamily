@@ -1,9 +1,11 @@
+import { render } from "storyblok-rich-text-react-renderer"
+
 const StoryRead = ({ text, photo }) => {
 
     return (
       <div className="story__read">
           <img src={photo} />
-          <p dangerouslySetInnerHTML={{__html: text}}/>
+          <p>{render(text)}</p>
       </div>
     );
   };

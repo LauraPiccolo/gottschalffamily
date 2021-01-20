@@ -26,19 +26,24 @@
   background-color: white;
 }
 
+.header__menu {
+  display: none !important;
+}
+
 @media (max-width: 750px) {
   .languages ul li {
     display: none;
-  }
-  .languages__active {
-    display: block !important;
     border-radius: 50%;
     padding: 6px 8px 5px 8px !important;
     font-size: 15px;
   }
+  .languages__active {
+    display: block !important;
+  }
 
   .languages {
     padding: 10px;
+    z-index: 2000;
   }
 
   .header__menu {
@@ -49,6 +54,24 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
+
+  .menu .languages {
+    position: relative !important;
+  }
+
+  .menu .languages ul li {
+    display: block;
+    border: none !important;
+  }
+
+  .menu .languages ul .languages__active {
+    border: solid 1px black !important;
+  }
+
+  .menu .languages ul .header__menu {
+    display: none !important;
+  }
+
 }
 
 @media (max-width: 350px) {

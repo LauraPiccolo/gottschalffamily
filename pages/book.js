@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useEffect } from 'react';
 
-const Book = () => {
+const Book = ({lang}) => {
 
   const bookText = {
       en: 'Our book will be available soon for free!',
@@ -14,10 +14,6 @@ const Book = () => {
     de: 'Zurück zur Startseite',
     ar: 'العودة إلى الصفحة الرئيسية'
   }
-
-    // Pass
-    
-    const lang = 'de';
     
   return (
     <div className="book">

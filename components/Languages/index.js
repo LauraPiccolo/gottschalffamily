@@ -9,12 +9,13 @@ const Languages = ({ setLang, currentLang }) => {
   }
 
   const toggleMenu = () => {
-    document.querySelector('.menu').classList.toggle('menu--open');
+    if(document.body.clientWidth <= 750) {
+      document.querySelector('.menu').classList.toggle('menu--open');
+    }
   }
 
-
   return (
-    <nav className="languages">
+    <nav className="languages" onClick={toggleMenu}>
       <ul>
         {
           languages.map((lang) => (
@@ -25,7 +26,7 @@ const Languages = ({ setLang, currentLang }) => {
             </li>
           ))
         }
-          <li className="header__menu" onClick={toggleMenu} /> 
+          <li className="header__menu" /> 
       </ul>
     </nav>
   );

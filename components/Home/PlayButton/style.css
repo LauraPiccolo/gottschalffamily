@@ -12,6 +12,7 @@
   transition-duration: .3s;
   border-radius: 20px;
   font-size: 20px;
+  z-index: 99999;
 }
 
 .play-button:hover {

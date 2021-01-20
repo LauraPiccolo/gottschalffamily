@@ -24,8 +24,11 @@ import '../components/Home/Credits/style.css'
 import '../components/Menu/style.css'
 
 class MyApp extends App {
+
+    state = { lang: 'de'}
     
     static async getInitialProps ({ Component, ctx }) {
+        console.log(this.state);
         let pageProps = {}
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx)
@@ -35,11 +38,15 @@ class MyApp extends App {
         }
     }
 
+    setLang = (value) => {
+        this.setState({lang: value})
+    }
+
     render() {
         const { Component, pageProps } = this.props;
         return (
-            <Layout>
-                <Component {...pageProps}/>   
+            <Layout setLang={this.setLang} lang={this.state.lang}>
+                <Component {...pageProps} lang={this.state.lang}/>   
             </Layout>
             )
     }

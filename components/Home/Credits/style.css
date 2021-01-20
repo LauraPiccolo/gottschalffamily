@@ -1,17 +1,27 @@
 .home__footer {
-    z-index: ;
+    z-index: 100000 ;
     position: absolute;
     bottom: 0px;
-    left: 20px;
+    left: 0px;
     line-height: 15px;
     font-size: 12px;
-    width: calc(100vw - 40px);
     /* height: 90px; */
     overflow: scroll;
     max-height: calc(100% - 120px);
     padding-top: 10px;
     opacity: 0.7;
-    width: calc(100vw - 220px);
+    width: 100vw;
+    padding-left: 20px;
+    bottom: -20px;
+    background-color: transparent;
+    border-top: none;
+}
+
+.home__footer--open {
+    bottom: 0px;
+    background-color: #f5f7fa;
+    opacity: 1;
+    border-top: solid 1px black;
 }
 
 .home__footer:hover {
@@ -59,7 +69,7 @@
     margin-bottom: 5px;
     text-transform: uppercase;
     border-bottom: solid 1px lightgrey;
-    width: calc(100vw - 40px);
+    width: calc(100vw - 50px);
     padding-bottom: 5px;
 }
 
@@ -78,14 +88,65 @@
     position: absolute;
     width: 15px;
     height: 15px;
-    right: 7px;
-    margin-top: -2px;
+    right: 30px;
+    margin-top: -43px;
     background-color: transparent;
     border: none;
     background-image: url('/cross.png');
     background-size: contain;
+    display: none;
+}
+
+.home__footer--open .home__footer__impressum__close {
+    display: block;
+}
+
+.home__footer--open .home__footer__close {
+    display: block;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
 }
 
 .home__footer__design:hover,  .home__footer__impressum__button:hover {
     text-decoration: underline;
+}
+
+.home__footer__impressum {
+    width: 100%;
+}
+
+.home__footer__impressum .rte {
+    width: calc(100% - 40px);
+}
+
+@media (max-width: 750px) {
+    .home__footer {
+        display: none;
+    }
+
+    .menu .home__footer {
+        display: block !important;
+        font-size: 10px !important;
+        text-transform: none !important;
+    }
+
+    .menu .home__footer .home__footer__credits {
+        width: 55vw;
+        display: inline-block;
+        margin-right: 5vw;
+    }
+
+    .menu .home__footer .home__footer__links {
+        width: 30vw;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .menu .home__footer__impressum__button {
+        margin-bottom: 14px;
+        font-size: 10px;
+    }
 }

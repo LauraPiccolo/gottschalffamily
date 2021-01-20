@@ -5,7 +5,7 @@ const PlayButton = ({ }) => {
     document.querySelector('.player').style.width = 'calc(100% - 40px)';
     document.querySelector('.player').style.marginLeft = '20px';
     document.querySelector('.video').style.opacity = '1';
-    document.querySelector('.video').style.zIndex = '5';
+    document.querySelector('.video').style.zIndex = '100000';
     document.querySelector('.video').style.pointerEvents = 'all';
     document.querySelector('.header').style.display = 'none';
     document.querySelector('.player').style.opacity = '1';

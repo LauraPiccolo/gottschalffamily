@@ -17,7 +17,6 @@ import HomeToolbar from '../../components/Home/HomeToolbar'
 export default function homeSection({ fetchedContent, lang }) {
   const router = useRouter()
   const pages = ['was','warum','wie','wer','wo']
-  lang="de"
 
   const [next, setNext] = useState(1);
   const [location, setLocation] = useState(router.query.homeSection);

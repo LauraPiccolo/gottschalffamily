@@ -2,7 +2,9 @@ import Introduction from '../components/Introduction'
 // import { getThemes } from '../lib/api'
 import { getHome } from '../lib/api'
 
-const Home = ({ content }) => {
+const Home = ({ lang, content }) => {
+
+  console.log(lang)
 
   return (
     <div id="home__intro">
@@ -11,12 +13,12 @@ const Home = ({ content }) => {
   )
 }
 
-export async function getStaticProps({ preview = null }) {
+export async function getServerSideProps({ preview = null, params}) {
+  console.log(params);
   const content = (await getHome(preview)) || []
   return {
       props: { content },
   }
 }
-
 
 export default Home

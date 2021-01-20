@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Languages from '../Languages'
+import Credits from '../Home/Credits'
 
 const Menu = ({ headerSections, setLang, lang}) => {
 
@@ -26,6 +27,7 @@ const Menu = ({ headerSections, setLang, lang}) => {
         </ul>
       </nav>
       <Languages setLang={setLang} currentLang={lang} />
+      <Credits lang={lang} impressum='blabla'/>
     </div>
   );
 };

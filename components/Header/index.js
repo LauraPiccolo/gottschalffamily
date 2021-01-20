@@ -6,6 +6,11 @@ const Header = ({ headerSections }) => {
   const router = useRouter();
   const navLinks = ["/home/was","/now","/archive","/book"]
   const navLinksMicro = ["/home","/now","/archive","/book"]
+
+  const toggleMenu = () => {
+    document.querySelector('.menu').classList.toggle('menu--open');
+  }
+
   return (
     <header className="header">
       <nav className="header__nav header__nav--desktop">
@@ -19,7 +24,7 @@ const Header = ({ headerSections }) => {
           }
         </ul>
       </nav>
-      <nav className="header__nav header__nav--mobile">
+      <nav className="header__nav header__nav--mobile" onClick={toggleMenu}>
         <ul>
           {
             headerSections.map((name, index) => {
