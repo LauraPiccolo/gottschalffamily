@@ -32,6 +32,7 @@
   .header__nav--mobile {
     display: block;
     font-size: 16px;
+    line-height: 33px;
   }
   .header__nav--desktop {
     display: none;
@@ -43,7 +44,7 @@
   }
 
   .header__nav__li--active {
-    width: calc(100vw - 93px);
+    width: calc(100vw - 94px);
     text-align: center;
   }
 }
