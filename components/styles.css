@@ -71,11 +71,11 @@ body, .container, #__next {
   }
 
   .main, .archive__list, .event-wrapper {
-    height: calc(100vh - 110px) !important;
+    height: calc(100% - 110px) !important;
   }
 
   .now {
-    height: calc(100vh - 70px) !important;
+    height: calc(100% - 70px) !important;
   }
 
   .home__toolbar, .archive__toolbar, .event-wrapper {
