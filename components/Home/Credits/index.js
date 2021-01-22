@@ -19,7 +19,7 @@ const Credits= ({ lang, impressum }) => {
       },
       ar: {
         impressum: 'بصمة',
-        credits: 'بتمويل من الوزارة الاتحادية للداخلية والبناء والمجتمع (BMI) وكذلك من خلال البرنامج الخاص Neustart of the Fonds Soziokultur.',
+        credits: 'بتمويل من الوزارة الاتحادية للداخلية والبناء والمجتمع (BMI) <br/>وكذلك من خلال البرنامج الخاص Neustart of the Fonds Soziokultur.',
         design: 'الموقع من قبل'
       }
   };
@@ -27,6 +27,7 @@ const Credits= ({ lang, impressum }) => {
   return (
     <footer className={`home__footer${impressumOpen ? ' home__footer--open':''}`}>
       <div className='home__footer__close' onClick={() => setImpressumOpen(false)}/>
+      <button className="home__footer__cross" onClick={() => setImpressumOpen(false)}/>
       <div className="home__footer__small">
         <div className="home__footer__logos" style={{display: impressumOpen ? 'none':'block'}}>
           <a href="https://neustartkultur.de/" target="_blank"><img src="/logos/nsk.png"/></a>
@@ -41,9 +42,8 @@ const Credits= ({ lang, impressum }) => {
         </p>
         </div>
         <div className="home__footer__impressum" style={{height: impressumOpen ? 'auto':'0px'}}>
-          <button className="home__footer__impressum__close" onClick={() => setImpressumOpen(false)}/>
           <h4>{credits[lang].impressum}</h4>
-          <p className="rte">{render(impressum)}</p>
+          <div className="rte">{render(impressum)}</div>
         </div>
     </footer>
   );

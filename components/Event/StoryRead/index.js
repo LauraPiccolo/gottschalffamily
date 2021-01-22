@@ -5,7 +5,7 @@ const StoryRead = ({ text, photo }) => {
     return (
       <div className="story__read">
           <img src={photo} />
-          <p>{render(text)}</p>
+          <div>{render(text)}</div>
       </div>
     );
   };

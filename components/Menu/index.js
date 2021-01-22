@@ -10,23 +10,31 @@ const Menu = ({ headerSections, setLang, lang}) => {
   const navLinksMicro = ["/home","/now","/archive","/book"]
 
   const closeMenu = () => {
-      setTimeout(() => {document.querySelector('.menu--open').classList.remove('menu--open');}, 600)
+      document.querySelector('.menu--open').classList.remove('menu--open');
+  }
+
+  const aboutText = {
+    en: 'About',
+    de: 'Über',
+    ar: 'حول'
   }
 
   return (
     <div className="menu">
       <nav className="menu__nav">
-        <ul>
+        <ul className="menu__nav__ul">
           {
             headerSections.map((name, index) => (
-              <li className={`menu__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' menu__nav__li--active':''}`} onClick={closeMenu}>
-                <Link href={navLinks[index]}>{name}</Link>
+              <li className={`menu__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' menu__nav__li--active':''}`} key={name}>
+                <Link href={navLinks[index]}>{name === 'Storyfeld' ? aboutText[lang] : name}</Link>
               </li>
             ))
           }
+          <li>
+          <Languages setLang={setLang} currentLang={lang} />
+          </li>
         </ul>
       </nav>
-      <Languages setLang={setLang} currentLang={lang} />
       <Credits lang={lang} impressum='blabla'/>
     </div>
   );

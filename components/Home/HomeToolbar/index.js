@@ -10,7 +10,7 @@ const HomeToolbar= ({ navList, current }) => {
         <ul>
           {
             navList.map((section, index) => (
-              <li className={`home__toolbar__nav__link${section.toLowerCase() === current ? ' home__toolbar__nav__link--active':''}`}>
+              <li className={`home__toolbar__nav__link${pages[index] === current ? ' home__toolbar__nav__link--active':''}`}key={section}>
                 <Link 
                 activeClassName="home__toolbar__nav__link--active"
                 href={`/home/${pages[index]}`}>

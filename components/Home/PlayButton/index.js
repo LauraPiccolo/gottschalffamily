@@ -1,11 +1,11 @@
-const PlayButton = ({ }) => {
+const PlayButton = ({ lang }) => {
 
   const playAudio = (event) => {
     event.preventDefault();
     document.querySelector('.player').style.width = 'calc(100% - 40px)';
     document.querySelector('.player').style.marginLeft = '20px';
     document.querySelector('.video').style.opacity = '1';
-    document.querySelector('.video').style.zIndex = '100000';
+    document.querySelector('.video').style.zIndex = '10';
     document.querySelector('.video').style.pointerEvents = 'all';
     document.querySelector('.header').style.display = 'none';
     document.querySelector('.player').style.opacity = '1';
@@ -22,8 +22,14 @@ const PlayButton = ({ }) => {
     }, 700)
   }
 
+  const audioText = {
+    en: 'AUDIO / VIDEO',
+    de: 'AUDIO / VIDEO',
+    ar: 'صوت / فيديو'
+  }
+
   return (
-    <div className="play-button" onClick={(event) => {playAudio(event)}}>AUDIO / VIDEO</div>
+    <div className="play-button" onClick={(event) => {playAudio(event)}}>{audioText[lang]}</div>
   );
 };
 

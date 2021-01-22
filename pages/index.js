@@ -1,10 +1,13 @@
 import Introduction from '../components/Introduction'
 // import { getThemes } from '../lib/api'
 import { getHome } from '../lib/api'
+import { useEffect } from 'react';
 
 const Home = ({ lang, content }) => {
 
-  console.log(lang)
+  useEffect(() => {
+    document.querySelector('.menu').classList.remove('menu--open');
+  })
 
   return (
     <div id="home__intro">

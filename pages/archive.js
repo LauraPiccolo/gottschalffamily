@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getThemes, getEventList } from '../lib/api'
 
 import ArchiveList from '../components/Archive/ArchiveList'
@@ -6,13 +6,17 @@ import ArchiveToolBar from '../components/Archive/ArchiveToolBar'
 
 const Archive = ({ lang, themes, events }) => {
 
+  useEffect(() => {
+    document.querySelector('.menu').classList.remove('menu--open');
+  })
+
   const archivedThemes = themes.filter((theme) => theme.content.Timing[0] === "archived")
 
   const newThemes = archivedThemes.map((theme) => ({
     title: [theme.content.Title],
     events: [...events.map((event) => ({
       city: event.full_slug.split('archived-events/').pop().split('/')[0],
-      date: event.content.date.replace(' 00:00','').replace(/-/g,'.'),
+      date: event.content.date.replace(' 00:00','').replace(/-/g, '.').split('.').reverse().join('.'),
       link: `${event.full_slug.split('archived-events/').pop().split('/')[0]}-${theme.content.title}`
     }))],
   }))
@@ -31,7 +35,7 @@ const Archive = ({ lang, themes, events }) => {
     city: city,
     events: events.filter((event) => event.full_slug.split('archived-events/').pop().split('/')[0] === city).map((event) => ({
       theme: event.content.theme.name,
-      date: event.content.date.replace(' 00:00','').replace(/-/g,'.'),
+      date: event.content.date.replace(' 00:00','').replace(/-/g, '.').split('.').reverse().join('.'),
       link:`${event.full_slug.split('archived-events/').pop().split('/')[0]}-${event.content.theme.name}`,
     }))
   }))
@@ -49,7 +53,7 @@ const Archive = ({ lang, themes, events }) => {
   
   return (
     <div id="archive">
-      <ArchiveToolBar archiveMode={archiveMode} setArchiveMode={setArchiveMode}/>
+      <ArchiveToolBar archiveMode={archiveMode} setArchiveMode={setArchiveMode} lang={lang}/>
       <ArchiveList archiveMode={archiveMode} archiveList={archiveList}/>
     </div>
   )

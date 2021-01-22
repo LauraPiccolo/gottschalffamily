@@ -14,11 +14,15 @@ const Book = ({lang}) => {
     de: 'Zurück zur Startseite',
     ar: 'العودة إلى الصفحة الرئيسية'
   }
+
+  useEffect(() => {
+    document.querySelector('.menu').classList.remove('menu--open');
+  })
     
   return (
     <div className="book">
       <p className="book__soon">{bookText[lang]}</p>
-      <Link className="book__back" href="/home/was">Back to Home</Link>
+      <Link className="book__back" href="/home/was">{backText[lang]}</Link>
     </div>
   )
 }

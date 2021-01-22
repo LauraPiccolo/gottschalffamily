@@ -58,6 +58,12 @@
 }
 
 @media (max-width: 750px) {
+  .now__events {
+    width: calc(100vw - 60px);
+    height: calc(100% - 100px);
+    overflow-y: scroll;
+  }
+
   .now__events__event {
     width: calc(100vw - 60px);
   }
@@ -80,17 +86,10 @@
     display: none;
   }
 
-  .now__events__event__info__register, .now__events__event__info__live {
+.now__events__event__info__register, .now__events__event__info__live {
     background-color: white;
-    width: 125px;
-    text-align: center;
-    margin-left: 10px;
-    line-height: 120%;
-    padding: 10px 0;
-  }
-
-  .now__events__event__info__register {
-    line-height: 40px;
+    margin-left: 5px;
+    font-size: 14px;
   }
 
   .now__events__event__info {
@@ -105,3 +104,10 @@
     margin-bottom: 10px;
   }
 }
+
+@media (max-width: 450px) {
+  .now__events__event__info__register, .now__events__event__info__live {
+      font-size: 11px;
+      padding: 2px 5px;
+    }
+  }

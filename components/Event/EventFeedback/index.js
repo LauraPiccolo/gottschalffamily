@@ -30,10 +30,10 @@ const EventFeedback = ({ medias }) => {
         {
         medias.map((media) => {
           if(media.filename.indexOf('jpg') > 0 || media.filename.indexOf('jpeg') > 0 || media.filename.indexOf('png') > 0) {
-            return (<img className="event__feedback__media event__feedback__media--image" src={media.filename} />)
+            return (<img className="event__feedback__media event__feedback__media--image" src={media.filename} key={media.filename}/>)
           }
           if(media.filename.indexOf('mpeg') > 0 || media.filename.indexOf('mp4') > 0 || media.filename.indexOf('m4v') > 0) {
-            return (<video className="event__feedback__media event__feedback__media--video" controls><source src={media.filename} /></video>)
+            return (<video className="event__feedback__media event__feedback__media--video" controls><source src={media.filename} key={media.filename}/></video>)
           }
         })}
         </div>
@@ -41,10 +41,10 @@ const EventFeedback = ({ medias }) => {
         {
         medias.map((media) => {
           if(media.filename.indexOf('jpg') > 0 || media.filename.indexOf('jpeg') > 0 || media.filename.indexOf('png') > 0) {
-            return (<img className="event__feedback__media event__feedback__media--image" src={media.filename} />)
+            return (<img className="event__feedback__media event__feedback__media--image" src={media.filename} key={media.filename}/>)
           }
           if(media.filename.indexOf('mpeg') > 0 || media.filename.indexOf('mp4') > 0 || media.filename.indexOf('m4v') > 0) {
-            return (<video className="event__feedback__media event__feedback__media--video" controls><source src={media.filename} /></video>)
+            return (<video className="event__feedback__media event__feedback__media--video" controls><source src={media.filename} key={media.filename}/></video>)
           }
         })}
         </div>

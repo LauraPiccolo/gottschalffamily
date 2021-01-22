@@ -6,7 +6,7 @@
   border-top: solid 1px black;
   bottom: 29px;
   overflow: visible;
-  z-index: 6;
+  z-index: 11;
   opacity: 0;
   pointer-events: none;
   transition: width .7s, margin-left .7s;

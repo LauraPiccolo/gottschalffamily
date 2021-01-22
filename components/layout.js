@@ -15,7 +15,7 @@ const Layout = ({ children, setLang, lang }) => {
         <div className="container">
 
 
-            <Header headerSections={content[lang].header}/>
+            <Header headerSections={content[lang].header} lang={lang}/>
             <Languages setLang={setLang} currentLang={lang}/>
             <Menu headerSections={content[lang].header} setLang={setLang} lang={lang}/>
             {children}

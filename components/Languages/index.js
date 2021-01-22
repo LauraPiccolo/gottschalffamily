@@ -8,20 +8,22 @@ const Languages = ({ setLang, currentLang }) => {
     setLang(lang);
   }
 
-  const toggleMenu = () => {
-    if(document.body.clientWidth <= 750) {
-      document.querySelector('.menu').classList.toggle('menu--open');
+  const toggleMenu = (event) => {
+    if(event.currentTarget.parentElement.className === "container") {
+      if(document.body.clientWidth <= 750) {
+        document.querySelector('.menu').classList.toggle('menu--open');
+      }
     }
   }
 
   return (
-    <nav className="languages" onClick={toggleMenu}>
+    <nav className="languages" onClick={(event) => toggleMenu(event)}>
       <ul>
         {
           languages.map((lang) => (
             <li 
             onClick={(event) => changeLanguage(event, lang)} 
-            className={`${lang === currentLang ? 'languages__active':''}`}>
+            className={`${lang === currentLang ? 'languages__active':''}`} key={lang}>
               {lang}
             </li>
           ))

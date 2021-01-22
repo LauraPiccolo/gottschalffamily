@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-const EventList = ({ theme }) => {
+const EventList = ({ theme, lang }) => {
 
   const [eventList, setEventList] = useState([]);
 
@@ -21,13 +21,26 @@ const EventList = ({ theme }) => {
     }
   }, [theme]);
 
+  const registerText = {
+    de:'anmelden',
+    en:'Register',
+    ar:'تسجيل'
+  }
+
+  const liveText = {
+    de:'Link zum Livestream',
+    en:'Link to livestream',
+    ar:'رابط إلى البث المباشر'
+  }
+
+
   return (
     <div className="now__events">
       <ul>
       {
-        eventList.map((event) => (
-          <li className="now__events__event">
-            <h3>{event.city}<span className="now__events__event__date">{event.date.replace(' 00:00','').replace(/-/g, '.')}</span></h3>
+        eventList.map((event, index) => (
+          <li className="now__events__event" key={`${event.city}--${index}`}>
+            <h3>{event.city}<span className="now__events__event__date">{event.date.replace(' 00:00','').replace(/-/g, '.').split('.').reverse().join('.')}</span></h3>
             <div className="now__events__event__people">
               {
                 event.people !== "" && (
@@ -36,9 +49,9 @@ const EventList = ({ theme }) => {
               }
               </div>
             <div className="now__events__event__info">
-              <a className="now__events__event__info__register" href={`mailto:${event.register}`}>Register</a>
-              <a className="now__events__event__info__live" href={event.live} target="_blank">Link to livestream</a>
-              <span className="now__events__event__info__date">{event.date.replace(' 00:00','').replace(/-/g, '.')}</span>
+              <a className="now__events__event__info__register" href={`mailto:${event.register}`}>{registerText[lang]}</a>
+              <a className="now__events__event__info__live" href={event.live} target="_blank">{liveText[lang]}</a>
+              <span className="now__events__event__info__date">{event.date.replace(' 00:00','').replace(/-/g, '.').split('.').reverse().join('.')}</span>
             </div>
           </li>
         ))

@@ -4,6 +4,7 @@
   padding: 10px;
   border: solid 1px black;
   background-color: white;
+  height: 50px;
 }
 
 .now__theme h2, .now__theme h3 {
@@ -31,5 +32,7 @@
     border: none;
     background-color: transparent;
     width: calc(100vw - 60px);
+    height: 40px;
+    border-bottom: solid 1px black;
   }
 }

@@ -48,8 +48,18 @@
     width: calc(100% - 20px);
     margin-left: 10px;
   }
+
+  .event__toolbar__button {
+    font-size: 11px;
+  }
   
   .event-wrapper .event__toolbar {
     display: none;
+  }
+}
+
+@media (max-width: 350px) {
+  .event__toolbar__button {
+    font-size: 9px;
   }
 }

@@ -23,6 +23,10 @@ export default function homeSection({ fetchedContent, lang }) {
 
   const impressumText = fetchedContent.Impressum;
 
+  useEffect(() => {
+    document.querySelector('.menu').classList.remove('menu--open');
+  })
+
   const content = {
     ...staticContent,
     de: {
@@ -105,7 +109,7 @@ export default function homeSection({ fetchedContent, lang }) {
       />
       <Sticker content={content[lang].sticker} />
       <HomeToolbar navList={content[lang].navList} current={router.query.homeSection}/>
-      <PlayButton />
+      <PlayButton lang={lang}/>
       <FullScreenVideo lang={lang} />
       <Player audioFile={content[lang].audioFile}/>
       <MainText title={content[lang].titles[index()]} content={content[lang].content[location]} next={pages[next]} location={location} lang={lang}/>

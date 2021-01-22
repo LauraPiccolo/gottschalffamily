@@ -61,7 +61,6 @@ body, .container, #__next {
 @media (max-width: 750px) {
   .main, .now, .archive__list, .event-wrapper {
     width: calc(100vw - 20px) !important;
-    height: calc(100vh - 110px) !important;
     top: 57px !important;
     left: 10px !important;
     position: absolute;
@@ -69,6 +68,14 @@ body, .container, #__next {
     margin-top: 0 !important;
     overflow-y: scroll;
     margin-left: 0 !important;
+  }
+
+  .main, .archive__list, .event-wrapper {
+    height: calc(100vh - 110px) !important;
+  }
+
+  .now {
+    height: calc(100vh - 70px) !important;
   }
 
   .home__toolbar, .archive__toolbar, .event-wrapper {

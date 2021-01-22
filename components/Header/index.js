@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-const Header = ({ headerSections }) => {
+const Header = ({ headerSections, lang }) => {
 
   const router = useRouter();
   const navLinks = ["/home/was","/now","/archive","/book"]
@@ -11,13 +11,19 @@ const Header = ({ headerSections }) => {
     document.querySelector('.menu').classList.toggle('menu--open');
   }
 
+  const aboutText = {
+    en: 'About',
+    de: 'Über',
+    ar: 'حول'
+  }
+
   return (
     <header className="header">
       <nav className="header__nav header__nav--desktop">
         <ul>
           {
             headerSections.map((name, index) => (
-              <li className={`header__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' header__nav__li--active':''}`}>
+              <li className={`header__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' header__nav__li--active':''}`} key={name}>
                 <Link href={navLinks[index]}>{name}</Link>
               </li>
             ))
@@ -30,8 +36,8 @@ const Header = ({ headerSections }) => {
             headerSections.map((name, index) => {
               if(router.pathname.indexOf(navLinksMicro[index]) >= 0) {
                 return (
-                  <li className={`header__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' header__nav__li--active':''}`}>
-                    Storyfelder — {name === 'Storyfeld' ? 'about' : name}
+                  <li className={`header__nav__li${router.pathname.indexOf(navLinksMicro[index]) >= 0 ? ' header__nav__li--active':''}`} key={name}>
+                    Storyfelder — {name === 'Storyfeld' ? aboutText[lang] : name}
                   </li>
                 )}
               

@@ -23,13 +23,13 @@ const ArchiveList = ({ archiveMode, archiveList }) => {
           <ul className="archive__list--ul">
           {
           archiveList.place.map((place, index) => (
-            <li className={`archive__list__item archive__list__item--place ${index === open? 'archive__list__item--open':'archive__list__item--closed'}`}>
+            <li className={`archive__list__item archive__list__item--place ${index === open? 'archive__list__item--open':'archive__list__item--closed'}`} key={`${place.city}--${index}`}>
               <h2 className="archive__list__item__title">{place.city}</h2>
               <div className="archive__list__item__events">
                 <ul>
                   {
-                    place.events.map((event) => (
-                      <li>
+                    place.events.map((event, index) => (
+                      <li key={`${event.date}--${index}`}>
                         <Link href={`/archive/${place.city}-${event.theme.toLowerCase()}`}>
                           <a>
                           <h3>{event.theme}</h3>
@@ -52,13 +52,13 @@ const ArchiveList = ({ archiveMode, archiveList }) => {
           <ul className="archive__list--ul">
           {
           archiveList.theme.map((theme, index) => (
-            <li className={`archive__list__item archive__list__item--theme ${index === open? 'archive__list__item--open':'archive__list__item--closed'}`}>
+            <li className={`archive__list__item archive__list__item--theme ${index === open? 'archive__list__item--open':'archive__list__item--closed'}`} key={`${theme.title}--${index}`}>
               <h2 className="archive__list__item__title">{theme.title}</h2>
               <div className="archive__list__item__theme">
                 <ul>
                   {
-                    theme.events.map((event) => (
-                      <li>
+                    theme.events.map((event, index) => (
+                      <li key={`${event.date}--${index}`}>
                         <Link href={`/${event.city}-${theme}`}>
                           <div>
                             <h3>{event.city}</h3>

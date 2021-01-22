@@ -161,6 +161,7 @@ const MainText = ({ title, content, next, location, lang }) => {
                   onMouseLeave={(event) => {showArrow(event)}}
                   onClick={(event) => {event.stopPropagation()}}
                   href="mailto:event@storyfelder.de"
+                  key={city.city}
                 >
                   <div className="city__register"
                   >{register[lang]}</div>
