@@ -4,9 +4,9 @@ import { useEffect } from 'react';
 const Book = ({lang}) => {
 
   const bookText = {
-      en: 'Our book will be available soon for free!',
-      de: 'Unser Buch wird in Kürze kostenlos erhältlich sein!',
-      ar: 'كتابنا سيكون متاحا قريبا مجانا'
+      en: 'Our book will be<br/>available soon for free!',
+      de: 'Unser Buch wird in Kürze<br/>kostenlos erhältlich sein!',
+      ar: 'كتابنا سيكون متاحا<br/> قريبا مجانا'
   }
 
   const backText = {
@@ -21,7 +21,7 @@ const Book = ({lang}) => {
     
   return (
     <div className="book">
-      <p className="book__soon">{bookText[lang]}</p>
+      <p className="book__soon" dangerouslySetInnerHTML={{__html: bookText[lang]}}/>
       <Link className="book__back" href="/home/was">{backText[lang]}</Link>
     </div>
   )

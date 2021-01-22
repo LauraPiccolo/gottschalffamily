@@ -14,6 +14,7 @@ event__info__dateplace */
 
 .event-wrapper {
     margin-top: 80px !important;
+    overflow-x: hidden;
 }
 
 .event__info h2 {
@@ -84,9 +85,20 @@ event__info__dateplace */
     display: none;
 }
 
+.story__watch__lang, .story__listen__lang {
+    text-align: left;
+    margin-top: -4px;
+    cursor: pointer;
+}
+
 @media (max-width: 750px) {
     .event {
         height: 100%;
+    }
+
+    .story__watch__lang, .story__listen__lang {
+        text-align: right;
+        margin-top: -8px;
     }
 
     .event-wrapper {
@@ -159,5 +171,43 @@ event__info__dateplace */
     }
     .event__feedback__media{
         width: 100%;
+    }
+}
+
+.story__watch__lang__option, .story__listen__lang__option {
+    font-size: 12px;
+    display: inline-block;
+}
+
+.story__watch__lang__option--active, .story__listen__lang__option--active {
+    text-decoration: underline;
+}
+
+.story__watch__lang__option::after, .story__listen__lang__option::after {
+    display: inline-block;
+    content: '•';
+    margin: 0 7px;
+    text-decoration: none !important;
+}
+
+.story__watch__lang__option:last-child::after, .story__listen__lang__option:last-child::after {
+    content: '';
+    margin: 0;
+}
+
+@media (max-width: 400px) {
+    .event__info h2 {
+        display: block;
+        position: relative;
+        line-height: 125%;
+        left: 0;
+    }
+    .event__info {
+        height: 70px;
+        margin-top: 22px;
+    }
+
+    .event__stories, .event__feedback {
+        height: calc(100% - 85px);
     }
 }

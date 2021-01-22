@@ -50,8 +50,8 @@ export default function event({ fetchedContent, lang }) {
                 <h3 className="event__stories__single__title">{eventInfo[`Title${index}`]}</h3>
                 <div className="event__stories__single__content">
                   { media === 'read' && ( <StoryRead text={eventInfo[`Text${index}`]} photo={eventInfo[`Photo${index}`].filename}/> )}
-                  { media === 'watch' && ( <StoryWatch video={eventInfo[`Video${index}`].filename} /> )}
-                  { media === 'listen' && ( <StoryListen audio={eventInfo[`Audio${index}`].filename}/> )}
+                  { media === 'watch' && ( <StoryWatch video={eventInfo[`Video${index}`]} /> )}
+                  { media === 'listen' && ( <StoryListen audio={eventInfo[`Audio${index}`]}/> )}
                 </div>
               </div>
               ))

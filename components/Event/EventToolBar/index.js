@@ -8,7 +8,7 @@ const EventToolBar = ({ media, setMedia, lang }) => {
       'ردود الفعل',
       'مفاجأة'
       ],
-      de: ["Lesen", "Anschauen", "Zuhören", "Feedback", "Überraschung"]
+      de: ["Lesen", "Schauen", "Hören", "Feedback", "Zufällig"]
     }
 
     return (

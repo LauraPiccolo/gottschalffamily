@@ -11,7 +11,7 @@ const Home = ({ lang, content }) => {
 
   return (
     <div id="home__intro">
-      <Introduction />
+      <Introduction content={content}/>
     </div>
   )
 }

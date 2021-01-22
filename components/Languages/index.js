@@ -4,8 +4,10 @@ const Languages = ({ setLang, currentLang }) => {
   const languages = ['de','en','ar'];
 
   const changeLanguage = (event, lang) => {
-    event.preventDefault(); 
-    setLang(lang);
+    if(event.currentTarget.parentElement.parentElement.parentElement.className !== "container") {
+      event.preventDefault(); 
+      setLang(lang);
+    }
   }
 
   const toggleMenu = (event) => {
