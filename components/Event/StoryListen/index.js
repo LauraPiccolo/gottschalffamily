@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const StoryListen = ({ audio }) => {
 
@@ -9,10 +9,12 @@ const StoryListen = ({ audio }) => {
       document.querySelector('.story__listen audio').load();
     }
 
+    useEffect(() => {
+    }, []);
 
     return (
       <div className="story__listen">
-          <audio controls>
+          <audio controls className="story__listen__player">
             <source src={audio[audioIndex].filename} />
           </audio>
           {

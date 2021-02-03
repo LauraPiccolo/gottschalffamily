@@ -14,7 +14,7 @@ import staticContent from '../../data'
 
 import HomeToolbar from '../../components/Home/HomeToolbar'
 
-export default function homeSection({ fetchedContent, lang }) {
+export default function homeSection({ fetchedContent, lang, setImpressum }) {
   const router = useRouter()
   const pages = ['was','warum','wie','wer','wo']
 
@@ -25,7 +25,8 @@ export default function homeSection({ fetchedContent, lang }) {
 
   useEffect(() => {
     document.querySelector('.menu').classList.remove('menu--open');
-  })
+    setImpressum(impressumText);
+  }, []);
 
   const content = {
     ...staticContent,
@@ -118,7 +119,7 @@ export default function homeSection({ fetchedContent, lang }) {
   )
 }
 
-export async function getServerSideProps({ preview = null }) {
+export async function getServerSideProps({ preview = null, params }) {
   const fetchedContent = (await getHome(preview)) || []
   return {
       props: { fetchedContent },

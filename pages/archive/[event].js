@@ -26,9 +26,11 @@ export default function event({ fetchedContent, lang }) {
   const modes = ['read','watch','listen','feedback','surprise']
 
   useEffect(() => {
+    if(media !=='feedback') document.querySelector('.event__stories').scrollTo(0,0);
     if(media === "surprise") {
       const randomNumber = Math.round(Math.random()*3);
       setMedia(modes[randomNumber]);
+      if(modes[randomNumber] !=='feedback') document.querySelector('.event__stories').scrollTo(0,0);
     }              
   },[media])
 

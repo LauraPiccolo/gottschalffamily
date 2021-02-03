@@ -9,6 +9,7 @@ const PlayButton = ({ lang }) => {
     document.querySelector('.video').style.pointerEvents = 'all';
     document.querySelector('.header').style.display = 'none';
     document.querySelector('.player').style.opacity = '1';
+    document.querySelector('.cross-cursor').style.display = 'block';
     const duration = document.querySelector('.player__audio').duration;
     document.querySelector('.player__cursor').style.opacity = '1';
     document.querySelector('.arrow-cursor').style.display = 'none';

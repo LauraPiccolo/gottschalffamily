@@ -53,9 +53,9 @@ body, .container, #__next {
   .arrow-cursor {
     opacity: 0;
   }
-  .cross-cursor {
+  /* .cross-cursor {
     opacity: 0;
-  }
+  } */
 }
 
 @media (max-width: 750px) {
@@ -125,7 +125,8 @@ body {
   align-content: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: -60px;
+  /* margin-top: -60px; */
+  margin-top: 25vh;
 }
 
 .book__soon {

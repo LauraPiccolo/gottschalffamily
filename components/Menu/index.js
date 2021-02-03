@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Languages from '../Languages'
 import Credits from '../Home/Credits'
 
-const Menu = ({ headerSections, setLang, lang}) => {
+const Menu = ({ headerSections, setLang, lang, impressum}) => {
 
   const router = useRouter();
   const navLinks = ["/home/was","/now","/archive","/book"]
@@ -35,7 +35,7 @@ const Menu = ({ headerSections, setLang, lang}) => {
           </li>
         </ul>
       </nav>
-      <Credits lang={lang} impressum='blabla'/>
+      <Credits lang={lang} impressum={impressum}/>
     </div>
   );
 };

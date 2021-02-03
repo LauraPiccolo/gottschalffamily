@@ -38,3 +38,19 @@
 .video__video--ar {
   filter: grayscale(1);
 }
+
+@media (hover: none) {
+  .cross-cursor {
+    width: 40px;
+    height: auto;
+    position: absolute;
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    pointer-events: none;
+    z-index: 20;
+    opacity: 1;
+    pointer-events: none;
+  }
+}

@@ -50,7 +50,9 @@ const EventList = ({ theme, lang }) => {
               </div>
             <div className="now__events__event__info">
               <a className="now__events__event__info__register" href={`mailto:${event.register}`}>{registerText[lang]}</a>
-              <a className="now__events__event__info__live" href={event.live} target="_blank">{liveText[lang]}</a>
+              {
+                event.live !== '' && (<a className="now__events__event__info__live" href={event.live} target="_blank">{liveText[lang]}</a>)
+              }
               <span className="now__events__event__info__date">{event.date.replace(' 00:00','').replace(/-/g, '.').split('.').reverse().join('.')}</span>
             </div>
           </li>

@@ -63,6 +63,10 @@ event__info__dateplace */
 
 .story__listen audio {
     width: calc(100vw - 140px);
+    border: solid 1px black;
+    background-color: transparent;
+    border-radius: 60px;
+    height: 55px;
 }
 
 .story__read img {

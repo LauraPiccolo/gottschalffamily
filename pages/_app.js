@@ -1,5 +1,6 @@
 import App from 'next/app';
 import React, { useState } from 'react';
+import { PageTransition } from 'next-page-transitions'
 
 import Layout from '../components/layout'
 import '../components/reset.css'
@@ -25,7 +26,7 @@ import '../components/Menu/style.css'
 
 class MyApp extends App {
 
-    state = { lang: 'de'}
+    state = { lang: 'de', impressum: ''};
     
     static async getInitialProps ({ Component, ctx }) {
         console.log(this.state);
@@ -33,6 +34,7 @@ class MyApp extends App {
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx)
         }
+        console.log(pageProps);
         return {
             pageProps,
         }
@@ -42,11 +44,35 @@ class MyApp extends App {
         this.setState({lang: value})
     }
 
+    setImpressum = (value) => {
+        this.setState({impressum: value})
+    }
+
     render() {
         const { Component, pageProps } = this.props;
+        const path = this.props.router._inFlightRoute;
+        console.log(path);
         return (
-            <Layout setLang={this.setLang} lang={this.state.lang}>
-                <Component {...pageProps} lang={this.state.lang}/>   
+            <Layout setLang={this.setLang} lang={this.state.lang} impressum={this.state.impressum}>
+                <PageTransition timeout={300} classNames="page-transition">
+                    <Component {...pageProps} lang={this.state.lang} setImpressum={this.setImpressum} key={path}/>   
+                </PageTransition>
+                <style jsx global>{`
+                .page-transition-enter {
+                    opacity: 0;
+                }
+                .page-transition-enter-active {
+                    opacity: 1;
+                    transition: opacity 300ms;
+                }
+                .page-transition-exit {
+                    opacity: 1;
+                }
+                .page-transition-exit-active {
+                    opacity: 0;
+                    transition: opacity 300ms;
+                }
+                `}</style>
             </Layout>
             )
     }

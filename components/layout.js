@@ -3,13 +3,12 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Languages from './Languages';
 import Menu from './Menu';
-// import Sticker from './Sticker';
-// FETCH
+import { getHome } from '../lib/api'
 import content from '../data';
 
-const Language = React.createContext()
+export default function Layout ({ children, setLang, lang, impressum}) {
 
-const Layout = ({ children, setLang, lang }) => {
+    // const impressumText = fetchedContent.Impressum;
 
     return (
         <div className="container">
@@ -17,10 +16,10 @@ const Layout = ({ children, setLang, lang }) => {
 
             <Header headerSections={content[lang].header} lang={lang}/>
             <Languages setLang={setLang} currentLang={lang}/>
-            <Menu headerSections={content[lang].header} setLang={setLang} lang={lang}/>
+            <Menu headerSections={content[lang].header} setLang={setLang} lang={lang} impressum={impressum}/>
             {children}
         </div>
     )
 }
-  
-export default Layout
+
+// export default Layout

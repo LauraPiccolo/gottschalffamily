@@ -1,6 +1,6 @@
 const content = {
   'de': {
-    'header': ['Storyfeld','Jetzt','Archiv','Buch'],
+    'header': ['Storyfeld','Bald','Stories','Buch'],
     'navList': ['Was','Warum','Wie','Wer','Wo'],
     'titles': ['Storyfeld','Warum?','Wie sieht das in der Praxis aus?','Wer sind wir?','Wo?','Storyfelder - Weltpremiere '],
     'content': {
@@ -15,7 +15,7 @@ const content = {
     'audioFile':'audio_de.mp3',
   },
   'en': {
-    'header': ['Storyfeld','Now','Archive','Book'],
+    'header': ['Storyfeld','Next','Stories','Book'],
     'navList': ['What','Why','How','Who','Where'],
     'titles': ['Storyfield','Why?','And in practice?','Who are we?','Where?','Storyfield – World premiere'],
     'content': {
@@ -30,8 +30,8 @@ const content = {
     'audioFile':'audio_en.mp3',
   },
   'ar': {
-    'header': ['Storyfeld','الآن',
-    'أرشيف',
+    'header': ['Storyfeld','التالى',
+    'قصص',
     'كتاب'],
     'navList': ['حقل القصص هو',
     'لماذا',

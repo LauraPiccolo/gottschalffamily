@@ -4,7 +4,8 @@ const Languages = ({ setLang, currentLang }) => {
   const languages = ['de','en','ar'];
 
   const changeLanguage = (event, lang) => {
-    if(event.currentTarget.parentElement.parentElement.parentElement.className !== "container") {
+    const parent = event.target.parentElement.parentElement.parentElement.parentElement.className;
+    if(window.innerWidth >= 700 || parent === 'menu__nav__ul') {
       event.preventDefault(); 
       setLang(lang);
     }
