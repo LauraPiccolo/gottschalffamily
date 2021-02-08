@@ -1,25 +1,6 @@
 import { useEffect, useState } from "react"
 
-const EventList = ({ theme, lang }) => {
-
-  const [eventList, setEventList] = useState([]);
-
-  useEffect(() => {
-    const events = [];
-    for(let index = 1 ; index < 50 ; index ++) {
-      if(theme[`City_name_${index}`] !== undefined) {
-        const newCity = {
-          city: theme[`City_name_${index}`],
-          date: theme[`City_date_${index}`],
-          live: theme[`City_stream_link_${index}`].url,
-          register: theme[`City_register_link_${index}`].email,
-          people: theme[`City_people_${index}`],
-        }
-       events.push(newCity);
-      }
-      setEventList(events);
-    }
-  }, [theme]);
+const EventList = ({ eventAll, lang }) => {
 
   const registerText = {
     de:'anmelden',
@@ -33,14 +14,13 @@ const EventList = ({ theme, lang }) => {
     ar:'رابط إلى البث المباشر'
   }
 
-
   return (
     <div className="now__events">
       <ul>
       {
-        eventList.map((event, index) => (
+        eventAll.map((event, index) => (
           <li className="now__events__event" key={`${event.city}--${index}`}>
-            <h3>{event.city}<span className="now__events__event__date">{event.date.replace(' 00:00','').replace(/-/g, '.').split('.').reverse().join('.')}</span></h3>
+            <h3>{event.location}<span className="now__events__event__date">{event.date.replace(' 00:00','').replace(/-/g, '.').split('.').reverse().join('.')}</span></h3>
             <div className="now__events__event__people">
               {
                 event.people !== "" && (
@@ -53,7 +33,6 @@ const EventList = ({ theme, lang }) => {
               {
                 event.live !== '' && (<a className="now__events__event__info__live" href={event.live} target="_blank">{liveText[lang]}</a>)
               }
-              <span className="now__events__event__info__date">{event.date.replace(' 00:00','').replace(/-/g, '.').split('.').reverse().join('.')}</span>
             </div>
           </li>
         ))

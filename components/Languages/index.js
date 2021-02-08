@@ -1,4 +1,6 @@
 
+import Cookies from 'js-cookie'
+
 const Languages = ({ setLang, currentLang }) => {
 
   const languages = ['de','en','ar'];
@@ -8,6 +10,7 @@ const Languages = ({ setLang, currentLang }) => {
     if(window.innerWidth >= 700 || parent === 'menu__nav__ul') {
       event.preventDefault(); 
       setLang(lang);
+      Cookies.set('lang', lang)
     }
   }
 

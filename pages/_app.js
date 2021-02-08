@@ -17,12 +17,13 @@ import '../components/Home/HomeToolbar/style.css'
 import '../components/Now/EventList/style.css'
 import '../components/Now/Theme/style.css'
 import '../components/Archive/ArchiveList/style.css'
-import '../components/Archive/ArchiveToolBar/style.css'
+import '../components/Archive/ArchiveLocations/style.css'
 import '../components/Event/EventToolBar/style.css'
 import '../components/Event/EventFeedback/style.css'
 import '../components/Event/style.css'
 import '../components/Home/Credits/style.css'
 import '../components/Menu/style.css'
+import '../components/utils/cookiebar.css'
 
 class MyApp extends App {
 
@@ -34,7 +35,6 @@ class MyApp extends App {
         if (Component.getInitialProps) {
             pageProps = await Component.getInitialProps(ctx)
         }
-        console.log(pageProps);
         return {
             pageProps,
         }
@@ -54,9 +54,9 @@ class MyApp extends App {
         console.log(path);
         return (
             <Layout setLang={this.setLang} lang={this.state.lang} impressum={this.state.impressum}>
-                <PageTransition timeout={300} classNames="page-transition">
+                {/* <PageTransition timeout={300} classNames="page-transition"> */}
                     <Component {...pageProps} lang={this.state.lang} setImpressum={this.setImpressum} key={path}/>   
-                </PageTransition>
+                {/* </PageTransition> */}
                 <style jsx global>{`
                 .page-transition-enter {
                     opacity: 0;

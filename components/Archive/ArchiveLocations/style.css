@@ -40,3 +40,31 @@
     padding: 0;
   }
 }
+
+.archive__locations {
+  margin-top: 70px;
+  z-index: 3000;
+}
+
+.archive__locations ul {
+  display: flex;
+  align-items: space-around;
+  justify-content: stretch;
+  margin-left: 20px;
+  width: calc(100% - 40px);
+  flex-wrap: wrap;
+}
+
+.archive__locations__city {
+  border: solid black 1px;
+  margin-right: -1px;
+  margin-top: -1px;
+  text-align: center;
+  flex-grow: 1;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.archive__locations__city--selected {
+  background-color: white;
+}

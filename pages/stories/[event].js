@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
-import { getEvents } from '../../lib/api'
+import { getThemes} from '../../lib/api'
 
 // FETCH
 // import staticContent from '../../data'
@@ -10,11 +10,11 @@ import StoryWatch from '../../components/Event/StoryWatch'
 import StoryListen from '../../components/Event/StoryListen'
 import EventFeedback from '../../components/Event/EventFeedback'
 
-export default function event({ fetchedContent, lang }) {
+export default function event({ themes, lang }) {
 
   useEffect(() => {
     document.querySelector('.menu').classList.remove('menu--open');
-  })
+  }, [])
 
   const router = useRouter()
   const [location, setLocation] = useState(router.query.event)
@@ -22,6 +22,8 @@ export default function event({ fetchedContent, lang }) {
   const place = location.split('-')[0]
   const theme = location.split('-')[1]
   const stories = [1,2,3];
+
+  console.log(theme, place);
 
   const modes = ['read','watch','listen','feedback','surprise']
 
@@ -34,7 +36,9 @@ export default function event({ fetchedContent, lang }) {
     }              
   },[media])
 
-  const eventInfo = fetchedContent;
+  const eventInfo = themes.filter((themee) => themee.content.Title === theme)[0].content.events.filter((event) => event.location[0] === place)[0];
+
+  console.log(eventInfo.stories);
 
   return (
     <div className="event">
@@ -47,13 +51,13 @@ export default function event({ fetchedContent, lang }) {
         { media !== 'feedback' && (
           <div className="event__stories">
             {
-              stories.map((index) => (
+              eventInfo.stories.map((story, index) => (
                 <div className="event__stories__single" key={index}>
-                <h3 className="event__stories__single__title">{eventInfo[`Title${index}`]}</h3>
+                <h3 className="event__stories__single__title">{story.Title}</h3>
                 <div className="event__stories__single__content">
-                  { media === 'read' && ( <StoryRead text={eventInfo[`Text${index}`]} photo={eventInfo[`Photo${index}`].filename}/> )}
-                  { media === 'watch' && ( <StoryWatch video={eventInfo[`Video${index}`]} /> )}
-                  { media === 'listen' && ( <StoryListen audio={eventInfo[`Audio${index}`]}/> )}
+                  { media === 'read' && ( <StoryRead text={story.Text[0].content} photo={story.Photo.filename}/> )}
+                  { media === 'watch' && ( <StoryWatch video={story.Video} /> )}
+                  { media === 'listen' && ( <StoryListen audio={story.Audio}/> )}
                 </div>
               </div>
               ))
@@ -61,19 +65,26 @@ export default function event({ fetchedContent, lang }) {
           </div>
           )
         }
-        { media === 'feedback' && ( <EventFeedback medias={eventInfo.Feedback_medias}/> )}
+        { media === 'feedback' && ( <EventFeedback medias={eventInfo.feedback}/> )}
       </div>
       <EventToolBar media={media} setMedia={setMedia} lang={lang}/>
     </div>
   )
 }
 
-export async function getServerSideProps({preview=null, params}) {
-  const location = params.event;
-  const place = location.split('-')[0]
-  const theme = location.split('-')[1]
-  const fetchedContent = (await getEvents(`${place}/${theme}`)) || []
+// export async function getServerSideProps({preview=null, params}) {
+//   const location = params.event;
+//   const place = location.split('-')[0]
+//   const theme = location.split('-')[1]
+//   const fetchedContent = (await getEvents(`${place}/${theme}`)) || []
+//   return {
+//       props: { fetchedContent },
+//   }
+// }
+
+export async function getServerSideProps({ preview = null }) {
+  const themes = (await getThemes(preview)) || []
   return {
-      props: { fetchedContent },
+      props: { themes },
   }
 }

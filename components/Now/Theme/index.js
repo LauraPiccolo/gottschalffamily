@@ -12,7 +12,7 @@ const Theme = ({ theme }) => {
       <div className="now__theme">
         <h2 className="now__theme__title">{theme.title}</h2>
         <h3 className="now__theme__year">{theme.period}</h3>
-        <p className="now__theme__description">{render(theme.description)}</p>
+        <p className="now__theme__description">{theme.description}</p>
       </div>
     );
 };

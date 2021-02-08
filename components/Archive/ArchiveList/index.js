@@ -1,82 +1,53 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-const ArchiveList = ({ archiveMode, archiveList }) => {
+const ArchiveList = ({ eventList, lang }) => {
 
-  const [open, setOpen] = useState(0);
-
-  // const changeOpen = (event) => {
-  //    const currentScroll = event.currentTarget.scrollTop;
-  //    const maxScroll = event.currentTarget.querySelector('ul').clientHeight - event.target.clientHeight;
-  //    const ratio = maxScroll / archiveList[archiveMode].length;
-  //    setOpen(Math.round(currentScroll / ratio / 20));
-  // }
-
-  // useEffect(() => {
-  //   document.querySelector('.archive__list__secret-scroll').style.height = document.querySelector('.archive__list ul').clientHeight*2 + 'px';
-  // })
-
+  const soon = {
+    de: 'Bald',
+    en: 'Soon',
+    ar: 'هكذا'
+  }
   return (
-    <div className="archive__list" onScroll={(event) => changeOpen(event)}>
-      {
-        archiveMode === 'place' && (
-          <ul className="archive__list--ul">
-          {
-          archiveList.place.map((place, index) => (
-            <li className={`archive__list__item archive__list__item--place ${index === open? 'archive__list__item--open':'archive__list__item--closed'}`} key={`${place.city}--${index}`}>
-              <h2 className="archive__list__item__title">{place.city}</h2>
-              <div className="archive__list__item__events">
-                <ul>
-                  {
-                    place.events.map((event, index) => (
-                      <li key={`${event.date}--${index}`}>
-                        <Link href={`/archive/${place.city}-${event.theme.toLowerCase()}`}>
-                          <a>
-                          <h3>{event.theme}</h3>
-                          <h3>{event.date}</h3>
-                          </a>
-                        </Link>
-                      </li>
-                    ))
-                  }
-                </ul>
+    <div className="archive__list">
+      {eventList.map((event) => {
+        var today = new Date();
+        var eventdate = new Date(event[0].date.substring(6, 10) , event[0].date.substring(3, 5) - 1, event[0].date.substring(0, 2));
+        if(today > eventdate && event[0].filled) {
+          return(
+            <a className="archive__list__event" href={`/stories/${event[0].link}`}>
+                <img src={event[0].thumbnail} />
+                <p>
+                  {event[0].theme}<br/>{event[0].date}
+                </p>
+              </a>
+            )
+        }
+        if(today > eventdate && !event[0].filled) {
+          return(
+            <div className="archive__list__event" href={`/stories/${event[0].link}`}>
+                <img src={event[0].thumbnail} />
+                <p>
+                  {soon[lang]} : {event[0].theme}<br/>{event[0].date}
+                </p>
               </div>
-            </li>
-          ))
-          }
-        </ul>
-        )
-      }
-      {
-        archiveMode === 'theme' && (
-          <ul className="archive__list--ul">
-          {
-          archiveList.theme.map((theme, index) => (
-            <li className={`archive__list__item archive__list__item--theme ${index === open? 'archive__list__item--open':'archive__list__item--closed'}`} key={`${theme.title}--${index}`}>
-              <h2 className="archive__list__item__title">{theme.title}</h2>
-              <div className="archive__list__item__theme">
-                <ul>
-                  {
-                    theme.events.map((event, index) => (
-                      <li key={`${event.date}--${index}`}>
-                        <Link href={`/${event.city}-${theme}`}>
-                          <div>
-                            <h3>{event.city}</h3>
-                            <h3>{event.date}</h3>
-                          </div>
-                        </Link>
-                      </li>
-                    ))
-                  }
-                </ul>
-              </div>
-            </li>
-          ))
-          }
-        </ul>
-        )
-      }
-      {/* <div className="archive__list__secret-scroll"/> */}
+            )
+        }
+        
+      })}
+      {eventList.map((event) => {
+        var today = new Date();
+        var eventdate = new Date(event[0].date.substring(6, 10) , event[0].date.substring(3, 5) - 1, event[0].date.substring(0, 2));
+        if(today < eventdate) {
+          return( 
+            <a className="archive__list__event" href={`mailto:${event.email}`}>
+              <img src={event[0].thumbnail} />
+              <p>
+                {soon[lang]} : {event[0].theme}<br/>{event[0].date}
+              </p>
+            </a>
+          )}        
+      })}
     </div>
   )
 }

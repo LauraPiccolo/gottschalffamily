@@ -1,6 +1,6 @@
 import EventList from '../components/Now/EventList';
 import Theme from '../components/Now/Theme';
-import { getThemes, getEventList } from '../lib/api'
+import { getThemes } from '../lib/api'
 import { useEffect } from 'react';
 
 const Now = ({ lang, themes }) => {
@@ -9,12 +9,18 @@ const Now = ({ lang, themes }) => {
     document.querySelector('.menu').classList.remove('menu--open');
   })
 
-  const currentTheme = themes.filter((theme) => theme.content.Timing[0] === "future")[0]
+  const currentThemes = themes.filter((theme) => theme.content.Timing[0] === "future");
 
   return (
     <div className="now">
-      <Theme theme={currentTheme.content}/>
-      <EventList theme={currentTheme.content} lang={lang}/>
+      {
+        currentThemes.map((theme )=> (
+          <div className="now__block" key={theme}>
+            <Theme theme={theme.content}/>
+            <EventList theme={theme.content} lang={lang} eventAll={theme.content.events}/>
+          </div>
+        ))
+      }
     </div>
   )
 }

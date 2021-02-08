@@ -4,8 +4,8 @@ import { useRouter } from 'next/router'
 const Header = ({ headerSections, lang }) => {
 
   const router = useRouter();
-  const navLinks = ["/home/was","/now","/archive","/book"]
-  const navLinksMicro = ["/home","/now","/archive","/book"]
+  const navLinks = ["/home/was","/bald","/stories","/book"]
+  const navLinksMicro = ["/home","/bald","/stories","/book"]
 
   const toggleMenu = () => {
     document.querySelector('.menu').classList.toggle('menu--open');
