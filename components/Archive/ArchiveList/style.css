@@ -82,6 +82,14 @@
   border: solid 1px black;
 }
 
+/* .archive__list__event--unfilled img, .archive__list__event--future img {
+  filter:saturate(0);
+} */
+
+.archive__list__event--unfilled img:hover, .archive__list__event--future img:hover {
+  opacity: 0.3;
+}
+
 .archive__list__event p {
   opacity: 1;
   cursor: pointer;
@@ -93,11 +101,14 @@
 @media (max-width: 750px) {
   .archive__list__event {
     width: calc(100vw - 40px);
-    margin: 10px
+    margin: 10px 10px 0px 10px;
   }
   
   .archive__list__event img {
     width: calc(100vw - 40px);
   }
-  
+
+  .archive__list {
+    padding-bottom: 10px;
+  }
 }

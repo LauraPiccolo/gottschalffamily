@@ -55,7 +55,7 @@ export default function event({ themes, lang }) {
                 <div className="event__stories__single" key={index}>
                 <h3 className="event__stories__single__title">{story.Title}</h3>
                 <div className="event__stories__single__content">
-                  { media === 'read' && ( <StoryRead text={story.Text[0].content} photo={story.Photo.filename}/> )}
+                  { media === 'read' && ( <StoryRead text={story.Text} photo={story.Photo.filename}/> )}
                   { media === 'watch' && ( <StoryWatch video={story.Video} /> )}
                   { media === 'listen' && ( <StoryListen audio={story.Audio}/> )}
                 </div>

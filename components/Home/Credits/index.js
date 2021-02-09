@@ -24,6 +24,8 @@ const Credits= ({ lang, impressum }) => {
       }
   };
 
+  console.log(impressum)
+
   return (
     <footer className={`home__footer${impressumOpen ? ' home__footer--open':''}`}>
       <div className='home__footer__close' onClick={() => setImpressumOpen(false)}/>

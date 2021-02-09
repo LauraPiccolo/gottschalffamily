@@ -57,6 +57,7 @@
 
   .menu .languages {
     position: relative !important;
+    z-index: 10;
   }
 
   .menu .languages ul li {

@@ -141,7 +141,7 @@ event__info__dateplace */
 
     .event__stories__single__content {
         width: 100%;
-        padding-left: 20px;
+        padding-left: 0px;
     }
 
     .event__stories__single__title {
@@ -178,23 +178,30 @@ event__info__dateplace */
     }
 }
 
-.story__watch__lang__option, .story__listen__lang__option {
-    font-size: 12px;
-    display: inline-block;
+.story__read__lang {
+    left: 0;
 }
 
-.story__watch__lang__option--active, .story__listen__lang__option--active {
+.story__watch__lang__option, .story__listen__lang__option, .story__read__lang__option {
+    font-size: 12px;
+    display: inline-block;
+    width: fit-content !important;
+    /* margin: 0 7px !important; */
+    cursor: pointer;
+}
+
+.story__watch__lang__option--active, .story__listen__lang__option--active, .story__read__lang__option--active {
     text-decoration: underline;
 }
 
-.story__watch__lang__option::after, .story__listen__lang__option::after {
+.story__watch__lang__option::after, .story__listen__lang__option::after, .story__read__lang__option::after {
     display: inline-block;
     content: '•';
-    margin: 0 7px;
+    margin: 0 7px !important;
     text-decoration: none !important;
 }
 
-.story__watch__lang__option:last-child::after, .story__listen__lang__option:last-child::after {
+.story__watch__lang__option:last-child::after, .story__listen__lang__option:last-child::after, .story__read__lang__option:last-child::after {
     content: '';
     margin: 0;
 }

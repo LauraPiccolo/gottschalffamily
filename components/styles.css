@@ -70,7 +70,7 @@ body, .container, #__next {
     margin-left: 0 !important;
   }
 
-  .main, .archive__list, .event-wrapper {
+  .main, .event-wrapper {
     height: calc(100% - 110px) !important;
   }
 

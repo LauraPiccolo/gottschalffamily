@@ -6,8 +6,8 @@ import Credits from '../Home/Credits'
 const Menu = ({ headerSections, setLang, lang, impressum}) => {
 
   const router = useRouter();
-  const navLinks = ["/home/was","/now","/archive","/book"]
-  const navLinksMicro = ["/home","/now","/archive","/book"]
+  const navLinks = ["/home/was","/bald","/stories","/book"]
+  const navLinksMicro = ["/home","/bald","/stories","/book"]
 
   const closeMenu = () => {
       document.querySelector('.menu--open').classList.remove('menu--open');

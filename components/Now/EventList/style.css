@@ -3,6 +3,12 @@
   margin: 20px;
 }
 
+.now {
+  height: calc(100vh - 70px);
+  overflow: scroll;
+  top: 70px;
+}
+
 .now__events ul {
   display: flex;
   align-items: space-between;
@@ -15,6 +21,8 @@
   font-size: 1.2rem;
   width: calc(50vw - 30px);
   border: solid 1px black;
+  padding-bottom: 47px;
+  position: relative;
 }
 
 .now__events__event h3 {
@@ -27,15 +35,17 @@
 }
 
 .now__events__event__info {
-  padding-left: 40px;
-  padding-top: 7px;
+  padding: 7px 0px 15px 0px;
   font-size: 1rem;
   display: flex;
   align-items: space-between;
   justify-content: space-between;
   font-size: 15px;
-  margin-bottom: 25px;
   text-transform: uppercase;
+  position: absolute;
+  height: 48px;
+  width: 100%;
+  bottom: -2px;
 }
 
 .now__events__event__info__register, .now__events__event__info__live, .now__events__event__info__date {
@@ -44,7 +54,11 @@
 
 .now__events__event__info__register, .now__events__event__info__live {
   border: solid 1px black;
-  padding: 0 20px;
+  width: 50%;
+  margin: 0 10px;
+  text-align: center;
+  border-radius: 60px;
+  cursor: pointer;
 }
 
 .now__events__event__info__register:hover, .now__events__event__info__live:hover {
@@ -56,9 +70,15 @@
 }
 
 .now__events__event__people p {
-  margin-left: 40px;
-  margin-top: 7px;
-  margin-bottom: 0;
+  margin: 7px 10px;
+  font-size: 0.8em;
+  line-height: 120%;
+}
+
+.now__events__event__people img {
+  width: 20px;
+  display: inline-block;
+  margin-right: 7px;
 }
 
 .now__events__event__date {
@@ -80,32 +100,20 @@
     width: calc(100vw - 60px);
   }
 
-  .now__events__event__info__date {
-    display: none;
+  .now__block {
+    margin-bottom: -5px;
   }
 
-.now__events__event__info__register, .now__events__event__info__live {
+  .now__events__event__info__register, .now__events__event__info__live {
     background-color: white;
-    margin-left: 5px;
-    font-size: 14px;
   }
-
-  .now__events__event__info {
-    justify-content: flex-end;
-  }
-
-  .now__events__event__people p {
-    line-height: 120%;
-    font-size: 15px;
-    margin-left: 0;
-    width: 100%;
-    margin-bottom: 10px;
-  }
+  
 }
 
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
   .now__events__event__info__register, .now__events__event__info__live {
-      font-size: 11px;
+      font-size: 10px;
       padding: 2px 5px;
+      line-height: 20px;
     }
-  }
+  } */

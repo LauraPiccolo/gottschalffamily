@@ -9,9 +9,6 @@ const StoryListen = ({ audio }) => {
       document.querySelector('.story__listen audio').load();
     }
 
-    useEffect(() => {
-    }, []);
-
     return (
       <div className="story__listen">
           <audio controls className="story__listen__player">
