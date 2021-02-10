@@ -1,17 +1,25 @@
-import Introduction from '../components/Introduction'
-// import { getThemes } from '../lib/api'
 import { getHome } from '../lib/api'
 import { useEffect } from 'react';
+import { render } from "storyblok-rich-text-react-renderer"
+import Link from 'next/link'
 
-const Home = ({ lang, content }) => {
+const Home = ({content }) => {
 
   useEffect(() => {
-    document.querySelector('.menu').classList.remove('menu--open');
-  })
+      setTimeout(() => {
+        document.querySelector("h1").style.opacity="1";
+      })
+  }, [content]);
 
   return (
-    <div id="home__intro">
-      <Introduction content={content}/>
+    <div id="home">
+      <header className="background">
+        <div className="background__text">{render(content.first_block)}</div>
+      </header>
+      <main>{render(content.content)}</main>
+      <footer>
+        <Link href="/impressum">Impressum</Link>
+      </footer>
     </div>
   )
 }
