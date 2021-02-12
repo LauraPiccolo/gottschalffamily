@@ -1,4 +1,4 @@
-const Imspanssum = ({content }) => {
+const Impressum = ({content }) => {
     return(
 <article>
    <div class="container">
@@ -288,4 +288,4 @@ Website: www.koerpertherapiefrankfurt.de
    </article>
    )
 }
-export default Imspanssum
+export default Impressum
