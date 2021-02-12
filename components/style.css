@@ -163,5 +163,10 @@ footer a:hover {
   h3 {
     font-size: 7.5vw;
   }
+
+  img {
+    width: 90%;
+    margin-left: 5%;
+  }
   
 }
